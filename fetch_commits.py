@@ -2,6 +2,7 @@
 """
 fetch_commits.py — собирает статистику по всем коммитам, issue и PR,
 метит их флагом is_official на основе одного JSON-файла ton_repos.json
+(в котором можно указывать и организации, и конкретные репозитории)
 и сохраняет результат в leaderboard.json.
 """
 
@@ -10,11 +11,12 @@ import sys
 import time
 import json
 import requests
+
 from collections import defaultdict
 from urllib.parse import urlparse
 
 # === config ===
-REPOS_FILE   = "ton_repos.json"    # единый файл со списками
+REPOS_FILE   = "ton_repos.json"    # JSON с ключами "official" и "unofficial"
 PER_PAGE     = 100
 CACHE_FILE   = "commit_cache.json"
 OUTPUT_JSON  = "leaderboard.json"
@@ -24,45 +26,83 @@ def log(level: str, msg: str):
     sys.stderr.write(f"[{level}] {msg}\n")
 
 
-def load_repos_json() -> dict[str, list[str]]:
+def list_org_repos(org: str) -> list[str]:
     """
-    Ожидает JSON вида:
+    Возвращает список публичных репозиториев организации "org" в формате owner/repo.
+    """
+    token = os.getenv("GITHUB_TOKEN")
+    headers = {"Accept": "application/vnd.github+json"}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    repos = []
+    page = 1
+    while True:
+        url = f"https://api.github.com/orgs/{org}/repos"
+        resp = requests.get(url, headers=headers,
+                            params={"per_page": PER_PAGE, "page": page}, timeout=30)
+        if not resp.ok:
+            log("warn", f"Ошибка списка реп {org}: HTTP {resp.status_code}")
+            break
+        data = resp.json()
+        if not data:
+            break
+        for r in data:
+            repos.append(f"{r['owner']['login']}/{r['name']}")
+        page += 1
+        time.sleep(0.1)
+    return repos
+
+
+def load_repos_json() -> dict[str, set[str]]:
+    """
+    Читает ton_repos.json вида:
     {
-      "official":   ["owner/repo", "https://github.com/owner2/repo2.git", ...],
+      "official":   ["owner/repo", "https://github.com/org2", ...],
       "unofficial": [...]
     }
-    Приводит все URL к форме "owner/repo".
+    Нормализует каждую запись:
+      - Если указана URL организации или owner без репы → разворачивает все её репы
+      - Если указан конкретный owner/repo → добавляет его
+    Возвращает dict с двумя множествами: {"official": {...}, "unofficial": {...}}
     """
     if not os.path.exists(REPOS_FILE):
-        log("error", f"{REPOS_FILE} not found")
+        log("error", f"{REPOS_FILE} не найден")
         sys.exit(1)
 
     with open(REPOS_FILE, encoding="utf-8") as f:
         data = json.load(f)
 
     def normalize(entry: str) -> str | None:
-        entry = entry.strip()
-        if entry.startswith(("http://", "https://")):
-            p = urlparse(entry)
+        e = entry.strip()
+        if not e or e.startswith("#"):
+            return None
+        # URL?
+        if e.startswith(("http://", "https://")):
+            p = urlparse(e)
             path = p.path.lstrip("/").rstrip("/")
             if path.endswith(".git"):
                 path = path[:-4]
-            if len(path.split("/")) == 2:
-                return path
-            log("warn", f"Bad URL in {REPOS_FILE}: {entry}")
-            return None
-        else:
-            if len(entry.split("/")) == 2:
-                return entry
-            log("warn", f"Bad repo format in {REPOS_FILE}: {entry}")
-            return None
+            return path or None
+        # иначе owner/repo или просто owner
+        return e
 
     result = {"official": set(), "unofficial": set()}
     for key in ("official", "unofficial"):
         for raw in data.get(key, []):
             norm = normalize(raw)
-            if norm:
+            if not norm:
+                continue
+            parts = norm.split("/")
+            if len(parts) == 1:
+                # это организация
+                for repo in list_org_repos(norm):
+                    result[key].add(repo)
+            elif len(parts) == 2:
+                # конкретный репозиторий
                 result[key].add(norm)
+            else:
+                log("warn", f"Неподдерживаемый формат в {REPOS_FILE}: {raw}")
     return result
 
 
@@ -72,7 +112,7 @@ def load_cache() -> set[str]:
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
                 return set(json.load(f))
         except Exception:
-            log("warn", f"Failed to load {CACHE_FILE}, starting fresh")
+            log("warn", f"Не удалось прочитать {CACHE_FILE}, сбрасываем")
     return set()
 
 
@@ -82,6 +122,13 @@ def save_cache(shas: set[str]):
 
 
 def fetch_commits(repo_full: str, seen: set[str], is_official: bool):
+    """
+    Генератор новых коммитов из repo_full:
+    {
+      sha, author, url, repo, date, is_official
+    }
+    Пропускает SHA из seen.
+    """
     token = os.getenv("GITHUB_TOKEN")
     headers = {"Accept": "application/vnd.github+json"}
     if token:
@@ -99,10 +146,10 @@ def fetch_commits(repo_full: str, seen: set[str], is_official: bool):
             f"https://api.github.com/repos/{repo_full}/commits",
             headers=headers,
             params={"per_page": PER_PAGE, "page": page},
-            timeout=30,
+            timeout=30
         )
         if not resp.ok:
-            log("warn", f"{repo_full} commits error: {resp.status_code}")
+            log("warn", f"{repo_full} commits error: HTTP {resp.status_code}")
             break
 
         data = resp.json()
@@ -121,7 +168,7 @@ def fetch_commits(repo_full: str, seen: set[str], is_official: bool):
                 "url":         f"{base_url}/commit/{sha}",
                 "repo":        base_url,
                 "date":        c["commit"]["author"].get("date"),
-                "is_official": is_official,
+                "is_official": is_official
             }
             seen.add(sha)
 
@@ -129,7 +176,13 @@ def fetch_commits(repo_full: str, seen: set[str], is_official: bool):
         time.sleep(0.1)
 
 
-def fetch_issues_prs(repo_full: str, seen: set[str], is_official: bool):
+def fetch_issues_prs(repo_full: str, is_official: bool):
+    """
+    Генератор всех issues и pull requests:
+      author, {
+        number, title, url, repo, state, created_at, is_official, type
+      }
+    """
     token = os.getenv("GITHUB_TOKEN")
     headers = {"Accept": "application/vnd.github+json"}
     if token:
@@ -145,10 +198,10 @@ def fetch_issues_prs(repo_full: str, seen: set[str], is_official: bool):
             f"https://api.github.com/repos/{repo_full}/issues",
             headers=headers,
             params={"per_page": PER_PAGE, "page": page, "state": "all"},
-            timeout=30,
+            timeout=30
         )
         if not resp.ok:
-            log("warn", f"{repo_full} issues error: {resp.status_code}")
+            log("warn", f"{repo_full} issues error: HTTP {resp.status_code}")
             break
 
         data = resp.json()
@@ -160,16 +213,15 @@ def fetch_issues_prs(repo_full: str, seen: set[str], is_official: bool):
             if not author:
                 continue
             rec = {
-                "number":      it.get("number"),
-                "title":       it.get("title"),
-                "url":         it.get("html_url"),
-                "repo":        base_url,
-                "state":       it.get("state"),
-                "created_at":  it.get("created_at"),
+                "number":     it.get("number"),
+                "title":      it.get("title"),
+                "url":        it.get("html_url"),
+                "repo":       base_url,
+                "state":      it.get("state"),
+                "created_at": it.get("created_at"),
                 "is_official": is_official,
-                "type":        "pull_request" if "pull_request" in it else "issue"
+                "type":       "pull_request" if "pull_request" in it else "issue"
             }
-            # чтобы не выводить повторяющиеся записи, можно фильтровать по seen-коммитам
             yield author, rec
 
         page += 1
@@ -180,8 +232,8 @@ def main():
     cfg = load_repos_json()
     official   = cfg["official"]
     unofficial = cfg["unofficial"]
-    all_repos  = {repo: True for repo in official}
-    all_repos.update({repo: False for repo in unofficial})
+    all_repos  = {**{r: True for r in official},
+                  **{r: False for r in unofficial}}
 
     seen = load_cache()
     users = defaultdict(lambda: {
@@ -202,7 +254,7 @@ def main():
 
     # Issues & PRs
     for repo_full, is_off in all_repos.items():
-        for author, rec in fetch_issues_prs(repo_full, seen, is_off):
+        for author, rec in fetch_issues_prs(repo_full, is_off):
             u = users.setdefault(author, {
                 "login":         author,
                 "profile_url":   f"https://github.com/{author}",
