@@ -4,11 +4,9 @@ name: Scheduled Fetch Commits
 
 on:
   schedule:
-    # Для тестов: каждые 5 минут
     - cron: '*/5 * * * *'
   workflow_dispatch:
 
-# Без этого блока встроенный GITHUB_TOKEN не сможет пушить изменения
 permissions:
   contents: write
 
@@ -35,13 +33,18 @@ jobs:
       - name: Run fetch_commits
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python fetch_commits.py > leaderboard.txt
+        run: python fetch_commits.py > leaderboard.txt
 
-      - name: Commit results if changed
+      - name: Commit & Push if changed
         run: |
-          git config user.name "github-actions[bot]"
+          git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add leaderboard.txt commit_cache.json
-          git diff --quiet || git commit -m "Update leaderboard and cache"
-          git push
+
+          # Проверяем staged изменения
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update leaderboard and cache"
+            git push
+          fi
