@@ -35,7 +35,9 @@
   "repos": {
     "orgs/ston-fi": {
       "commits_page": 1,
-      "issues_page": 1
+      "issues_page": 1,
+      "commits_since": "2025-04-23T18:10:41Z",
+      "issues_since": "2025-04-23T18:10:41Z"
     }
   }
 }
