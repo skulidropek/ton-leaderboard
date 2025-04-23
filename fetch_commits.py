@@ -29,11 +29,23 @@ def gh_headers():
 
 # ---------- cache helpers ----------
 def load_cache():
-    if pathlib.Path(CACHE_FILE).exists():
-        try: return json.load(open(CACHE_FILE,encoding="utf-8"))
-        except: log("warn","broken cache, resetting")
-    return {"commits":[],"issues":[],"users":[],
-            "orgs":{},"repos":{}}
+    if os.path.exists(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, encoding="utf-8") as f:
+                data = json.load(f)
+            if not isinstance(data, dict):
+                raise ValueError("cache.json is not a JSON object")
+            return data
+        except Exception:
+            log("warn", f"Broken {CACHE_FILE}, resetting to empty")
+    # default empty cache
+    return {
+        "commits": [],
+        "issues": [],
+        "users": [],
+        "orgs": {},
+        "repos": {}
+    }
 
 def save_cache(c):
     json.dump(c,open(CACHE_FILE,"w",encoding="utf-8"),
