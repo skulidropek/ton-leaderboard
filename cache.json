@@ -5,31 +5,35 @@
   "orgs": {
     "ton-community": {
       "repos": [],
-      "fetched_at": "2025-04-23T18:04:36Z"
+      "ts": 1745434187.6820571
     },
     "tonkeeper": {
       "repos": [],
-      "fetched_at": "2025-04-23T18:04:36Z"
+      "ts": 1745434187.6820571
     },
     "OpenBuilders": {
       "repos": [],
-      "fetched_at": "2025-04-23T18:04:36Z"
+      "ts": 1745434187.6820571
     },
     "ton-blockchain": {
       "repos": [],
-      "fetched_at": "2025-04-23T18:04:36Z"
+      "ts": 1745434187.6820571
     },
     "ton-studio": {
       "repos": [],
-      "fetched_at": "2025-04-23T18:04:37Z"
+      "ts": 1745434187.6820571
     },
     "ton-org": {
       "repos": [],
-      "fetched_at": "2025-04-23T18:04:37Z"
+      "ts": 1745434187.6820571
     },
     "tact-lang": {
       "repos": [],
-      "fetched_at": "2025-04-23T18:04:37Z"
+      "ts": 1745434187.6820571
+    },
+    "ston-fi": {
+      "repos": [],
+      "ts": 1745434187.6820571
     }
   },
   "repos": {
