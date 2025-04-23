@@ -1,6 +1,8 @@
 {
   "commits": [],
-  "issues": [],
+  "issues": [
+    "tact-lang/website#55"
+  ],
   "users": [],
   "orgs": {
     "ton-community": {
@@ -373,1923 +375,1923 @@
     },
     "tonkeeper/react-native-animated-charts": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:32Z",
+      "c_since": "2025-04-23T19:06:49Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:32Z"
+      "i_since": "2025-04-23T19:06:49Z"
     },
     "ton-blockchain/highload-wallet-contract-v3": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:32Z",
+      "c_since": "2025-04-23T19:07:01Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:32Z"
+      "i_since": "2025-04-23T19:07:01Z"
     },
     "ton-community/ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:32Z",
+      "c_since": "2025-04-23T19:06:58Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:33Z"
+      "i_since": "2025-04-23T19:06:58Z"
     },
     "tact-lang/bylaws": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:33Z",
+      "c_since": "2025-04-23T19:07:09Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:33Z"
+      "i_since": "2025-04-23T19:07:09Z"
     },
     "ton-blockchain/token-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:33Z",
+      "c_since": "2025-04-23T19:07:06Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:33Z"
+      "i_since": "2025-04-23T19:07:06Z"
     },
     "tonkeeper/tonapi-ts": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:33Z",
+      "c_since": "2025-04-23T19:07:09Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:34Z"
+      "i_since": "2025-04-23T19:07:09Z"
     },
     "ton-blockchain/punisher": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:34Z",
+      "c_since": "2025-04-23T19:06:59Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:34Z"
+      "i_since": "2025-04-23T19:06:59Z"
     },
     "tonkeeper/opentonapi": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:34Z",
+      "c_since": "2025-04-23T19:07:26Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:34Z"
+      "i_since": "2025-04-23T19:07:26Z"
     },
     "ton-org/test-utils": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:34Z",
+      "c_since": "2025-04-23T19:06:55Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:35Z"
+      "i_since": "2025-04-23T19:06:55Z"
     },
     "ton-blockchain/lockup-wallet-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:35Z",
+      "c_since": "2025-04-23T19:06:50Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:35Z"
+      "i_since": "2025-04-23T19:06:50Z"
     },
     "ton-community/vscode-func": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:35Z",
+      "c_since": "2025-04-23T19:07:24Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:35Z"
+      "i_since": "2025-04-23T19:07:24Z"
     },
     "tonkeeper/ton-assets": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:35Z",
+      "c_since": "2025-04-23T19:07:14Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:36Z"
+      "i_since": "2025-04-23T19:07:14Z"
     },
     "tonkeeper/demo-dapp-with-wallet": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:36Z",
+      "c_since": "2025-04-23T19:07:28Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:36Z"
+      "i_since": "2025-04-23T19:07:28Z"
     },
     "tonkeeper/bat-go": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:36Z",
+      "c_since": "2025-04-23T19:07:15Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:36Z"
+      "i_since": "2025-04-23T19:07:15Z"
     },
     "ston-fi/ton-labs-block": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:36Z",
+      "c_since": "2025-04-23T19:07:03Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:37Z"
+      "i_since": "2025-04-23T19:07:03Z"
     },
     "OpenBuilders/ton-domains-backend": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:37Z",
+      "c_since": "2025-04-23T19:07:10Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:37Z"
+      "i_since": "2025-04-23T19:07:10Z"
     },
     "ton-community/contract-verifier-backend": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:37Z",
+      "c_since": "2025-04-23T19:07:21Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:37Z"
+      "i_since": "2025-04-23T19:07:22Z"
     },
     "ton-blockchain/mining-status": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:37Z",
+      "c_since": "2025-04-23T19:07:24Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:38Z"
+      "i_since": "2025-04-23T19:07:24Z"
     },
     "tact-lang/tact-emulator": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:38Z",
+      "c_since": "2025-04-23T19:07:16Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:38Z"
+      "i_since": "2025-04-23T19:07:16Z"
     },
     "tonkeeper/ton-swift": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:38Z",
+      "c_since": "2025-04-23T19:06:56Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:38Z"
+      "i_since": "2025-04-23T19:06:57Z"
     },
     "ton-community/ton-core": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:39Z",
+      "c_since": "2025-04-23T19:07:11Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:39Z"
+      "i_since": "2025-04-23T19:07:11Z"
     },
     "ton-community/.github": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:39Z",
+      "c_since": "2025-04-23T19:06:46Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:39Z"
+      "i_since": "2025-04-23T19:06:46Z"
     },
     "ton-org/game-engines-sdk": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:39Z",
+      "c_since": "2025-04-23T19:07:05Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:39Z"
+      "i_since": "2025-04-23T19:07:05Z"
     },
     "ton-blockchain/tonlib-java": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:40Z",
+      "c_since": "2025-04-23T19:07:07Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:40Z"
+      "i_since": "2025-04-23T19:07:07Z"
     },
     "tact-lang/.github": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:40Z",
+      "c_since": "2025-04-23T19:07:02Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:40Z"
+      "i_since": "2025-04-23T19:07:03Z"
     },
     "ton-blockchain/func-contest2": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:40Z",
+      "c_since": "2025-04-23T19:07:29Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:40Z"
+      "i_since": "2025-04-23T19:07:29Z"
     },
     "ston-fi/dex-core-v2": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:41Z",
+      "c_since": "2025-04-23T19:07:16Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:41Z"
+      "i_since": "2025-04-23T19:07:16Z"
     },
     "ton-community/talents": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:41Z",
+      "c_since": "2025-04-23T19:07:02Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:41Z"
+      "i_since": "2025-04-23T19:07:02Z"
     },
     "tonkeeper/pay-ton-console": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:41Z",
+      "c_since": "2025-04-23T19:07:03Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:41Z"
+      "i_since": "2025-04-23T19:07:03Z"
     },
     "ston-fi/sdk": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:42Z",
+      "c_since": "2025-04-23T19:07:08Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:42Z"
+      "i_since": "2025-04-23T19:07:09Z"
     },
     "ton-blockchain/ton-trustless-bridge-evm-contracts": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:42Z",
+      "c_since": "2025-04-23T19:07:12Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:42Z"
+      "i_since": "2025-04-23T19:07:12Z"
     },
     "ton-studio/validators-monitoring": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:42Z",
+      "c_since": "2025-04-23T19:07:27Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:42Z"
+      "i_since": "2025-04-23T19:07:27Z"
     },
     "tact-lang/contract-payouts": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:43Z",
+      "c_since": "2025-04-23T19:06:54Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:43Z"
+      "i_since": "2025-04-23T19:06:54Z"
     },
     "ton-blockchain/bridge-solidity": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:43Z",
+      "c_since": "2025-04-23T19:07:10Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:43Z"
+      "i_since": "2025-04-23T19:07:10Z"
     },
     "tonkeeper/ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:43Z",
+      "c_since": "2025-04-23T19:07:30Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:44Z"
+      "i_since": "2025-04-23T19:07:30Z"
     },
     "ton-community/tact-docs": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:44Z",
+      "c_since": "2025-04-23T19:07:23Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:44Z"
+      "i_since": "2025-04-23T19:07:23Z"
     },
     "ton-community/tact": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:44Z",
+      "c_since": "2025-04-23T19:07:23Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:44Z"
+      "i_since": "2025-04-23T19:07:24Z"
     },
     "ton-blockchain/performance-test": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:44Z",
+      "c_since": "2025-04-23T19:07:23Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:45Z"
+      "i_since": "2025-04-23T19:07:23Z"
     },
     "ton-blockchain/benchmark-contracts": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:45Z",
+      "c_since": "2025-04-23T19:07:08Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:45Z"
+      "i_since": "2025-04-23T19:07:08Z"
     },
     "ton-community/func-js": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:45Z",
+      "c_since": "2025-04-23T19:07:30Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:45Z"
+      "i_since": "2025-04-23T19:07:30Z"
     },
     "tonkeeper/tonconnect-sdk": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:45Z",
+      "c_since": "2025-04-23T19:06:57Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:46Z"
+      "i_since": "2025-04-23T19:06:57Z"
     },
     "ston-fi/funcbox": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:46Z",
+      "c_since": "2025-04-23T19:07:22Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:46Z"
+      "i_since": "2025-04-23T19:07:23Z"
     },
     "OpenBuilders/gateway-tool": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:46Z",
+      "c_since": "2025-04-23T19:07:05Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:46Z"
+      "i_since": "2025-04-23T19:07:05Z"
     },
     "ton-community/tact-jetton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:46Z",
+      "c_since": "2025-04-23T19:07:27Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:47Z"
+      "i_since": "2025-04-23T19:07:28Z"
     },
     "OpenBuilders/community-bot-api": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:47Z",
+      "c_since": "2025-04-23T19:07:01Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:47Z"
+      "i_since": "2025-04-23T19:07:01Z"
     },
     "ton-blockchain/token-bridge-func": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:47Z",
+      "c_since": "2025-04-23T19:06:50Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:47Z"
+      "i_since": "2025-04-23T19:06:50Z"
     },
     "ton-blockchain/payment-channels": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:47Z",
+      "c_since": "2025-04-23T19:07:07Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:48Z"
+      "i_since": "2025-04-23T19:07:07Z"
     },
     "ton-studio/playbooks": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:48Z",
+      "c_since": "2025-04-23T19:07:02Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:48Z"
+      "i_since": "2025-04-23T19:07:02Z"
     },
     "tact-lang/tact-obsolete": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:48Z",
+      "c_since": "2025-04-23T19:07:02Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:48Z"
+      "i_since": "2025-04-23T19:07:02Z"
     },
     "tact-lang/contract-wallet": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:49Z",
+      "c_since": "2025-04-23T19:07:07Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:49Z"
+      "i_since": "2025-04-23T19:07:07Z"
     },
     "tonkeeper/burn-vouchers-dapp": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:49Z",
+      "c_since": "2025-04-23T19:07:15Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:49Z"
+      "i_since": "2025-04-23T19:07:15Z"
     },
     "ton-community/ton-vm-exec-builder": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:49Z",
+      "c_since": "2025-04-23T19:07:25Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:49Z"
+      "i_since": "2025-04-23T19:07:25Z"
     },
     "ton-org/ton-crypto-primitives": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:50Z",
+      "c_since": "2025-04-23T19:07:02Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:50Z"
+      "i_since": "2025-04-23T19:07:02Z"
     },
     "ton-community/website": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:50Z",
+      "c_since": "2025-04-23T19:07:11Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:50Z"
+      "i_since": "2025-04-23T19:07:11Z"
     },
     "ton-blockchain/hack-challenge-1": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:50Z",
+      "c_since": "2025-04-23T19:07:04Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:50Z"
+      "i_since": "2025-04-23T19:07:04Z"
     },
     "OpenBuilders/notcoin-voucher-exchange": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:51Z",
+      "c_since": "2025-04-23T19:07:14Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:51Z"
+      "i_since": "2025-04-23T19:07:14Z"
     },
     "OpenBuilders/ton-domains-frontend": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:51Z",
+      "c_since": "2025-04-23T19:06:58Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:51Z"
+      "i_since": "2025-04-23T19:06:58Z"
     },
     "tonkeeper/gasless-tron-protocol": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:51Z",
+      "c_since": "2025-04-23T19:07:20Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:51Z"
+      "i_since": "2025-04-23T19:07:21Z"
     },
     "ton-blockchain/packages": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:52Z",
+      "c_since": "2025-04-23T19:07:16Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:52Z"
+      "i_since": "2025-04-23T19:07:16Z"
     },
     "tact-lang/ton-abi": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:52Z",
+      "c_since": "2025-04-23T19:07:00Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:52Z"
+      "i_since": "2025-04-23T19:07:00Z"
     },
     "ton-community/tma-usdt-payments-demo": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:52Z",
+      "c_since": "2025-04-23T19:07:02Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:52Z"
+      "i_since": "2025-04-23T19:07:02Z"
     },
     "OpenBuilders/welcome-to-ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:53Z",
+      "c_since": "2025-04-23T19:07:11Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:53Z"
+      "i_since": "2025-04-23T19:07:12Z"
     },
     "ton-community/wton-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:53Z",
+      "c_since": "2025-04-23T19:07:01Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:53Z"
+      "i_since": "2025-04-23T19:07:01Z"
     },
     "tonkeeper/mintless-toolbox": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:53Z",
+      "c_since": "2025-04-23T19:07:30Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:53Z"
+      "i_since": "2025-04-23T19:07:30Z"
     },
     "tact-lang/tact": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:54Z",
+      "c_since": "2025-04-23T19:06:58Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:54Z"
+      "i_since": "2025-04-23T19:06:58Z"
     },
     "tact-lang/tree-sitter-tact": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:54Z",
+      "c_since": "2025-04-23T19:07:06Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:54Z"
+      "i_since": "2025-04-23T19:07:06Z"
     },
     "ton-blockchain/func-contest1-solutions": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:54Z",
+      "c_since": "2025-04-23T19:06:54Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:55Z"
+      "i_since": "2025-04-23T19:06:54Z"
     },
     "OpenBuilders/batch-sender": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:55Z",
+      "c_since": "2025-04-23T19:07:17Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:55Z"
+      "i_since": "2025-04-23T19:07:17Z"
     },
     "ton-blockchain/TEPs": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:55Z",
+      "c_since": "2025-04-23T19:07:01Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:55Z"
+      "i_since": "2025-04-23T19:07:01Z"
     },
     "ston-fi/tonlib-rs": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:55Z",
+      "c_since": "2025-04-23T19:07:23Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:56Z"
+      "i_since": "2025-04-23T19:07:23Z"
     },
     "ton-community/tlb-helper": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:56Z",
+      "c_since": "2025-04-23T19:07:00Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:56Z"
+      "i_since": "2025-04-23T19:07:00Z"
     },
     "ton-community/contract-verifier-contracts": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:56Z",
+      "c_since": "2025-04-23T19:07:03Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:56Z"
+      "i_since": "2025-04-23T19:07:03Z"
     },
     "ton-blockchain/adnl-tunnel": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:56Z",
+      "c_since": "2025-04-23T19:07:27Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:57Z"
+      "i_since": "2025-04-23T19:07:27Z"
     },
     "tonkeeper/swift-secp256k1": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:57Z",
+      "c_since": "2025-04-23T19:07:06Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:57Z"
+      "i_since": "2025-04-23T19:07:06Z"
     },
     "ston-fi/bug-bounty": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:57Z",
+      "c_since": "2025-04-23T19:06:45Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:57Z"
+      "i_since": "2025-04-23T19:06:45Z"
     },
     "tact-lang/tact-docs": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:57Z",
+      "c_since": "2025-04-23T19:07:01Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:58Z"
+      "i_since": "2025-04-23T19:07:01Z"
     },
     "tact-lang/tact-bikeshed-obsolete": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:58Z",
+      "c_since": "2025-04-23T19:06:59Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:58Z"
+      "i_since": "2025-04-23T19:06:59Z"
     },
     "ton-blockchain/minter": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:58Z",
+      "c_since": "2025-04-23T19:07:08Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:58Z"
+      "i_since": "2025-04-23T19:07:08Z"
     },
     "tonkeeper/spam-dapp": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:58Z",
+      "c_since": "2025-04-23T19:07:25Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:59Z"
+      "i_since": "2025-04-23T19:07:25Z"
     },
     "ton-blockchain/ledger-app-ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:59Z",
+      "c_since": "2025-04-23T19:07:19Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:59Z"
+      "i_since": "2025-04-23T19:07:19Z"
     },
     "ton-studio/tact-smart-battle": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:59Z",
+      "c_since": "2025-04-23T19:07:08Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:58:59Z"
+      "i_since": "2025-04-23T19:07:08Z"
     },
     "ton-blockchain/verifier": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:58:59Z",
+      "c_since": "2025-04-23T19:07:26Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:00Z"
+      "i_since": "2025-04-23T19:07:26Z"
     },
     "ton-studio/ton-labels": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:00Z",
+      "c_since": "2025-04-23T19:07:27Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:00Z"
+      "i_since": "2025-04-23T19:07:27Z"
     },
     "ton-community/ton-x": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:00Z",
+      "c_since": "2025-04-23T19:06:47Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:00Z"
+      "i_since": "2025-04-23T19:06:47Z"
     },
     "ton-blockchain/stablecoin-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:01Z",
+      "c_since": "2025-04-23T19:06:58Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:01Z"
+      "i_since": "2025-04-23T19:06:58Z"
     },
     "tact-lang/defi-cookbook": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:01Z",
+      "c_since": "2025-04-23T19:07:18Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:01Z"
+      "i_since": "2025-04-23T19:07:19Z"
     },
     "ton-blockchain/mnemonic2key": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:01Z",
+      "c_since": "2025-04-23T19:07:26Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:01Z"
+      "i_since": "2025-04-23T19:07:26Z"
     },
     "tonkeeper/ios": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:02Z",
+      "c_since": "2025-04-23T19:07:02Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:02Z"
+      "i_since": "2025-04-23T19:07:02Z"
     },
     "OpenBuilders/issues": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:02Z",
+      "c_since": "2025-04-23T19:07:20Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:02Z"
+      "i_since": "2025-04-23T19:07:20Z"
     },
     "ton-community/fireworks-func": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:02Z",
+      "c_since": "2025-04-23T19:06:58Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:02Z"
+      "i_since": "2025-04-23T19:06:58Z"
     },
     "ton-community/tutorials": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:03Z",
+      "c_since": "2025-04-23T19:07:13Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:03Z"
+      "i_since": "2025-04-23T19:07:13Z"
     },
     "tact-lang/docs-obsolete": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:03Z",
+      "c_since": "2025-04-23T19:06:58Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:03Z"
+      "i_since": "2025-04-23T19:06:58Z"
     },
     "ton-blockchain/wallet-ios": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:03Z",
+      "c_since": "2025-04-23T19:06:50Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:03Z"
+      "i_since": "2025-04-23T19:06:51Z"
     },
     "tonkeeper/wallet_ios": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:04Z",
+      "c_since": "2025-04-23T19:07:06Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:04Z"
+      "i_since": "2025-04-23T19:07:06Z"
     },
     "tact-lang/ton-core": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:04Z",
+      "c_since": "2025-04-23T19:06:59Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:04Z"
+      "i_since": "2025-04-23T19:06:59Z"
     },
     "tact-lang/tact-language-server": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:04Z",
+      "c_since": "2025-04-23T19:06:52Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:04Z"
+      "i_since": "2025-04-23T19:06:52Z"
     },
     "ton-blockchain/minter-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:05Z",
+      "c_since": "2025-04-23T19:07:05Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:05Z"
+      "i_since": "2025-04-23T19:07:05Z"
     },
     "tonkeeper/ton-connect-docs": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:05Z",
+      "c_since": "2025-04-23T19:07:19Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:05Z"
+      "i_since": "2025-04-23T19:07:19Z"
     },
     "tonkeeper/ton-console": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:05Z",
+      "c_since": "2025-04-23T19:07:11Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:06Z"
+      "i_since": "2025-04-23T19:07:11Z"
     },
     "ton-blockchain/vesting-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:06Z",
+      "c_since": "2025-04-23T19:07:13Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:06Z"
+      "i_since": "2025-04-23T19:07:13Z"
     },
     "tonkeeper/URKit": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:06Z",
+      "c_since": "2025-04-23T19:07:17Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:06Z"
+      "i_since": "2025-04-23T19:07:17Z"
     },
     "ton-community/tact-challenge": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:06Z",
+      "c_since": "2025-04-23T19:06:48Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:07Z"
+      "i_since": "2025-04-23T19:06:48Z"
     },
     "ton-blockchain/ton-blockchain.github.io": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:07Z",
+      "c_since": "2025-04-23T19:06:47Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:07Z"
+      "i_since": "2025-04-23T19:06:47Z"
     },
     "tact-lang/ton-opcode": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:07Z",
+      "c_since": "2025-04-23T19:07:04Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:07Z"
+      "i_since": "2025-04-23T19:07:04Z"
     },
     "tonkeeper/pytonapi": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:08Z",
+      "c_since": "2025-04-23T19:07:24Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:08Z"
+      "i_since": "2025-04-23T19:07:24Z"
     },
     "tonkeeper/event-source-swift": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:08Z",
+      "c_since": "2025-04-23T19:07:29Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:08Z"
+      "i_since": "2025-04-23T19:07:29Z"
     },
     "ton-community/tact-fireworks": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:08Z",
+      "c_since": "2025-04-23T19:06:55Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:08Z"
+      "i_since": "2025-04-23T19:06:55Z"
     },
     "tonkeeper/ton-api-swift": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:09Z",
+      "c_since": "2025-04-23T19:06:55Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:09Z"
+      "i_since": "2025-04-23T19:06:55Z"
     },
     "ton-blockchain/multisig-contract-v2": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:09Z",
+      "c_since": "2025-04-23T19:07:07Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:09Z"
+      "i_since": "2025-04-23T19:07:07Z"
     },
     "ton-org/ton-core": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:09Z",
+      "c_since": "2025-04-23T19:07:11Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:09Z"
+      "i_since": "2025-04-23T19:07:11Z"
     },
     "ton-community/ton-contract-executor": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:10Z",
+      "c_since": "2025-04-23T19:06:50Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:10Z"
+      "i_since": "2025-04-23T19:06:50Z"
     },
     "ton-community/flappy-bird": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:10Z",
+      "c_since": "2025-04-23T19:07:21Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:10Z"
+      "i_since": "2025-04-23T19:07:21Z"
     },
     "ton-blockchain/storage-gateway": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:10Z",
+      "c_since": "2025-04-23T19:07:09Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:11Z"
+      "i_since": "2025-04-23T19:07:09Z"
     },
     "ton-blockchain/func-contest2-solutions": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:11Z",
+      "c_since": "2025-04-23T19:06:57Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:11Z"
+      "i_since": "2025-04-23T19:06:57Z"
     },
     "ton-blockchain/tvm-web-viewer": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:11Z",
+      "c_since": "2025-04-23T19:07:30Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:11Z"
+      "i_since": "2025-04-23T19:07:30Z"
     },
     "ton-blockchain/ton-wallet": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:11Z",
+      "c_since": "2025-04-23T19:06:54Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:12Z"
+      "i_since": "2025-04-23T19:06:54Z"
     },
     "ton-community/onboarding-sandbox": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:12Z",
+      "c_since": "2025-04-23T19:07:04Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:12Z"
+      "i_since": "2025-04-23T19:07:04Z"
     },
     "ton-blockchain/liquid-staking-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:12Z",
+      "c_since": "2025-04-23T19:07:14Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:12Z"
+      "i_since": "2025-04-23T19:07:14Z"
     },
     "ton-blockchain/bridge-old": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:12Z",
+      "c_since": "2025-04-23T19:07:13Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:13Z"
+      "i_since": "2025-04-23T19:07:13Z"
     },
     "ton-community/ton-emulator": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:13Z",
+      "c_since": "2025-04-23T19:06:45Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:13Z"
+      "i_since": "2025-04-23T19:06:45Z"
     },
     "ton-blockchain/wallets-list": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:13Z",
+      "c_since": "2025-04-23T19:06:56Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:13Z"
+      "i_since": "2025-04-23T19:06:56Z"
     },
     "ton-blockchain/tl-parser": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:13Z",
+      "c_since": "2025-04-23T19:07:29Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:14Z"
+      "i_since": "2025-04-23T19:07:29Z"
     },
     "ton-blockchain/ton-connect": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:14Z",
+      "c_since": "2025-04-23T19:07:11Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:14Z"
+      "i_since": "2025-04-23T19:07:11Z"
     },
     "ton-blockchain/ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:14Z",
+      "c_since": "2025-04-23T19:07:09Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:14Z"
+      "i_since": "2025-04-23T19:07:10Z"
     },
     "ton-blockchain/docs": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:15Z",
+      "c_since": "2025-04-23T19:07:21Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:15Z"
+      "i_since": "2025-04-23T19:07:21Z"
     },
     "ton-blockchain/wallet-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:15Z",
+      "c_since": "2025-04-23T19:06:53Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:15Z"
+      "i_since": "2025-04-23T19:06:53Z"
     },
     "tonkeeper/tkml-server": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:15Z",
+      "c_since": "2025-04-23T19:07:05Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:16Z"
+      "i_since": "2025-04-23T19:07:05Z"
     },
     "ton-community/vanity-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:16Z",
+      "c_since": "2025-04-23T19:07:00Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:16Z"
+      "i_since": "2025-04-23T19:07:00Z"
     },
     "ston-fi/tonlib-sys": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:16Z",
+      "c_since": "2025-04-23T19:07:12Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:16Z"
+      "i_since": "2025-04-23T19:07:12Z"
     },
     "tact-lang/tact-deployer": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:16Z",
+      "c_since": "2025-04-23T19:07:24Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:17Z"
+      "i_since": "2025-04-23T19:07:24Z"
     },
     "ston-fi/jvp-core": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:17Z",
+      "c_since": "2025-04-23T19:07:26Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:17Z"
+      "i_since": "2025-04-23T19:07:26Z"
     },
     "tact-lang/ton-contract-config": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:17Z",
+      "c_since": "2025-04-23T19:07:27Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:18Z"
+      "i_since": "2025-04-23T19:07:27Z"
     },
     "ton-community/assets-sdk": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:18Z",
+      "c_since": "2025-04-23T19:07:00Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:18Z"
+      "i_since": "2025-04-23T19:07:00Z"
     },
     "ton-blockchain/homebrew-ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:18Z",
+      "c_since": "2025-04-23T19:06:59Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:18Z"
+      "i_since": "2025-04-23T19:06:59Z"
     },
     "ton-community/contract-verifier-config": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:18Z",
+      "c_since": "2025-04-23T19:07:28Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:18Z"
+      "i_since": "2025-04-23T19:07:28Z"
     },
     "tonkeeper/tonlib-go": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:19Z",
+      "c_since": "2025-04-23T19:07:24Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:19Z"
+      "i_since": "2025-04-23T19:07:24Z"
     },
     "tonkeeper/tonapi-oauth-demo": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:19Z",
+      "c_since": "2025-04-23T19:07:01Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:19Z"
+      "i_since": "2025-04-23T19:07:01Z"
     },
     "ston-fi/lite-client": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:19Z",
+      "c_since": "2025-04-23T19:06:56Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:20Z"
+      "i_since": "2025-04-23T19:06:56Z"
     },
     "tact-lang/contract-safe": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:20Z",
+      "c_since": "2025-04-23T19:07:25Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:20Z"
+      "i_since": "2025-04-23T19:07:25Z"
     },
     "tact-lang/web-ide2": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:20Z",
+      "c_since": "2025-04-23T19:06:51Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:20Z"
+      "i_since": "2025-04-23T19:06:51Z"
     },
     "ton-community/ton-docker-ctrl": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:20Z",
+      "c_since": "2025-04-23T19:07:00Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:21Z"
+      "i_since": "2025-04-23T19:07:00Z"
     },
     "tonkeeper/wallet-api": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:21Z",
+      "c_since": "2025-04-23T19:07:09Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:21Z"
+      "i_since": "2025-04-23T19:07:09Z"
     },
     "tonkeeper/etcd-go-config": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:21Z",
+      "c_since": "2025-04-23T19:06:45Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:21Z"
+      "i_since": "2025-04-23T19:06:46Z"
     },
     "ton-org/sandbox": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:21Z",
+      "c_since": "2025-04-23T19:07:21Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:22Z"
+      "i_since": "2025-04-23T19:07:21Z"
     },
     "ton-blockchain/libRaptorQ": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:22Z",
+      "c_since": "2025-04-23T19:07:24Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:22Z"
+      "i_since": "2025-04-23T19:07:24Z"
     },
     "ton-community/tact-template": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:22Z",
+      "c_since": "2025-04-23T19:06:59Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:22Z"
+      "i_since": "2025-04-23T19:06:59Z"
     },
     "OpenBuilders/transaction-lookup": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:23Z",
+      "c_since": "2025-04-23T19:07:25Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:23Z"
+      "i_since": "2025-04-23T19:07:25Z"
     },
     "ton-blockchain/vesting": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:23Z",
+      "c_since": "2025-04-23T19:06:52Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:23Z"
+      "i_since": "2025-04-23T19:06:52Z"
     },
     "ton-community/func-js-bin": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:23Z",
+      "c_since": "2025-04-23T19:07:14Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:23Z"
+      "i_since": "2025-04-23T19:07:15Z"
     },
     "ston-fi/api": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:24Z",
+      "c_since": "2025-04-23T19:07:28Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:24Z"
+      "i_since": "2025-04-23T19:07:28Z"
     },
     "tonkeeper/w5": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:24Z",
+      "c_since": "2025-04-23T19:07:01Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:24Z"
+      "i_since": "2025-04-23T19:07:01Z"
     },
     "ton-org/.github": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:24Z",
+      "c_since": "2025-04-23T19:07:29Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:25Z"
+      "i_since": "2025-04-23T19:07:29Z"
     },
     "ton-blockchain/func-contest1": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:25Z",
+      "c_since": "2025-04-23T19:07:10Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:25Z"
+      "i_since": "2025-04-23T19:07:10Z"
     },
     "ton-studio/.github": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:25Z",
+      "c_since": "2025-04-23T19:07:08Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:25Z"
+      "i_since": "2025-04-23T19:07:08Z"
     },
     "ton-community/compressed-nft-api": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:25Z",
+      "c_since": "2025-04-23T19:07:22Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:26Z"
+      "i_since": "2025-04-23T19:07:22Z"
     },
     "tact-lang/syntax-tools": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:26Z",
+      "c_since": "2025-04-23T19:07:04Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:26Z"
+      "i_since": "2025-04-23T19:07:04Z"
     },
     "tonkeeper/core-swift": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:26Z",
+      "c_since": "2025-04-23T19:06:56Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:26Z"
+      "i_since": "2025-04-23T19:06:56Z"
     },
     "ton-blockchain/tolk-js": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:27Z",
+      "c_since": "2025-04-23T19:07:26Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:27Z"
+      "i_since": "2025-04-23T19:07:26Z"
     },
     "ton-blockchain/address-util": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:27Z",
+      "c_since": "2025-04-23T19:07:23Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:27Z"
+      "i_since": "2025-04-23T19:07:23Z"
     },
     "ton-community/mintless-jetton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:27Z",
+      "c_since": "2025-04-23T19:07:25Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:28Z"
+      "i_since": "2025-04-23T19:07:25Z"
     },
     "tonkeeper/locales": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:28Z",
+      "c_since": "2025-04-23T19:07:11Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:28Z"
+      "i_since": "2025-04-23T19:07:11Z"
     },
     "ton-community/disassembler": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:28Z",
+      "c_since": "2025-04-23T19:06:58Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:28Z"
+      "i_since": "2025-04-23T19:06:58Z"
     },
     "tact-lang/contract-dns-simple": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:28Z",
+      "c_since": "2025-04-23T19:07:04Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:29Z"
+      "i_since": "2025-04-23T19:07:04Z"
     },
     "tact-lang/jetton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:29Z",
+      "c_since": "2025-04-23T19:07:07Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:29Z"
+      "i_since": "2025-04-23T19:07:07Z"
     },
     "OpenBuilders/simple-vote": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:29Z",
+      "c_since": "2025-04-23T19:07:10Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:29Z"
+      "i_since": "2025-04-23T19:07:10Z"
     },
     "ton-community/tlb-codegen": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:29Z",
+      "c_since": "2025-04-23T19:06:54Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:29Z"
+      "i_since": "2025-04-23T19:06:54Z"
     },
     "tact-lang/ton-wasm": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:30Z",
+      "c_since": "2025-04-23T19:07:15Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:30Z"
+      "i_since": "2025-04-23T19:07:15Z"
     },
     "tonkeeper/TEPs": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:30Z",
+      "c_since": "2025-04-23T19:07:04Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:30Z"
+      "i_since": "2025-04-23T19:07:04Z"
     },
     "ton-community/flappy-bird-server": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:30Z",
+      "c_since": "2025-04-23T19:07:10Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:31Z"
+      "i_since": "2025-04-23T19:07:10Z"
     },
     "tonkeeper/tkml-web": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:31Z",
+      "c_since": "2025-04-23T19:07:05Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:31Z"
+      "i_since": "2025-04-23T19:07:05Z"
     },
     "tact-lang/tact-sublime": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:31Z",
+      "c_since": "2025-04-23T19:07:30Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:31Z"
+      "i_since": "2025-04-23T19:07:30Z"
     },
     "ton-blockchain/TIPs": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:31Z",
+      "c_since": "2025-04-23T19:07:03Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:31Z"
+      "i_since": "2025-04-23T19:07:03Z"
     },
     "ton-community/awesome-ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:32Z",
+      "c_since": "2025-04-23T19:07:10Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:32Z"
+      "i_since": "2025-04-23T19:07:10Z"
     },
     "tonkeeper/ton-connect-api-swift": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:32Z",
+      "c_since": "2025-04-23T19:07:09Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:32Z"
+      "i_since": "2025-04-23T19:07:09Z"
     },
     "ton-blockchain/ledger-app-ton-old": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:32Z",
+      "c_since": "2025-04-23T19:06:45Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:33Z"
+      "i_since": "2025-04-23T19:06:45Z"
     },
     "ton-blockchain/func-contest1-tests": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:33Z",
+      "c_since": "2025-04-23T19:07:28Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:33Z"
+      "i_since": "2025-04-23T19:07:28Z"
     },
     "ton-blockchain/bridge-func": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:33Z",
+      "c_since": "2025-04-23T19:07:28Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:33Z"
+      "i_since": "2025-04-23T19:07:28Z"
     },
     "ton-community/tact-wallet": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:33Z",
+      "c_since": "2025-04-23T19:07:12Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:34Z"
+      "i_since": "2025-04-23T19:07:12Z"
     },
     "ton-blockchain/tonlib-go": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:34Z",
+      "c_since": "2025-04-23T19:07:20Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:34Z"
+      "i_since": "2025-04-23T19:07:20Z"
     },
     "ton-blockchain/nominator-pool": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:34Z",
+      "c_since": "2025-04-23T19:07:12Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:34Z"
+      "i_since": "2025-04-23T19:07:12Z"
     },
     "ton-blockchain/wallet-desktop": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:34Z",
+      "c_since": "2025-04-23T19:06:53Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:35Z"
+      "i_since": "2025-04-23T19:06:53Z"
     },
     "tonkeeper/addr.ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:35Z",
+      "c_since": "2025-04-23T19:06:55Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:35Z"
+      "i_since": "2025-04-23T19:06:56Z"
     },
     "tonkeeper/wallets-list-tk-pro": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:35Z",
+      "c_since": "2025-04-23T19:07:13Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:35Z"
+      "i_since": "2025-04-23T19:07:13Z"
     },
     "ton-community/flappy-bird-phaser": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:35Z",
+      "c_since": "2025-04-23T19:07:30Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:36Z"
+      "i_since": "2025-04-23T19:07:31Z"
     },
     "tact-lang/tact-cookbook": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:36Z",
+      "c_since": "2025-04-23T19:07:23Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:36Z"
+      "i_since": "2025-04-23T19:07:23Z"
     },
     "ston-fi/TEPs": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:36Z",
+      "c_since": "2025-04-23T19:07:04Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:36Z"
+      "i_since": "2025-04-23T19:07:04Z"
     },
     "ton-blockchain/intellij-ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:36Z",
+      "c_since": "2025-04-23T19:07:14Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:37Z"
+      "i_since": "2025-04-23T19:07:14Z"
     },
     "ton-studio/dune-queries": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:37Z",
+      "c_since": "2025-04-23T19:07:24Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:37Z"
+      "i_since": "2025-04-23T19:07:24Z"
     },
     "ton-blockchain/tonkeygen": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:37Z",
+      "c_since": "2025-04-23T19:07:27Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:37Z"
+      "i_since": "2025-04-23T19:07:27Z"
     },
     "ton-blockchain/ton-trustless-bridge-frontend": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:37Z",
+      "c_since": "2025-04-23T19:06:55Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:38Z"
+      "i_since": "2025-04-23T19:06:55Z"
     },
     "tonkeeper/tonkeeper-ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:38Z",
+      "c_since": "2025-04-23T19:07:28Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:38Z"
+      "i_since": "2025-04-23T19:07:28Z"
     },
     "OpenBuilders/pixel-me-bot": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:38Z",
+      "c_since": "2025-04-23T19:07:02Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:38Z"
+      "i_since": "2025-04-23T19:07:02Z"
     },
     "tact-lang/tact-runtime": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:38Z",
+      "c_since": "2025-04-23T19:06:54Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:39Z"
+      "i_since": "2025-04-23T19:06:54Z"
     },
     "ton-org/blueprint": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:39Z",
+      "c_since": "2025-04-23T19:07:00Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:39Z"
+      "i_since": "2025-04-23T19:07:00Z"
     },
     "ton-blockchain/ton-proxy-swift": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:39Z",
+      "c_since": "2025-04-23T19:07:07Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:39Z"
+      "i_since": "2025-04-23T19:07:08Z"
     },
     "ton-blockchain/multisig-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:39Z",
+      "c_since": "2025-04-23T19:06:54Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:40Z"
+      "i_since": "2025-04-23T19:06:54Z"
     },
     "ston-fi/pton-contracts": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:40Z",
+      "c_since": "2025-04-23T19:07:09Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:40Z"
+      "i_since": "2025-04-23T19:07:09Z"
     },
     "ton-community/tact-guide-template": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:40Z",
+      "c_since": "2025-04-23T19:07:20Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:40Z"
+      "i_since": "2025-04-23T19:07:20Z"
     },
     "tonkeeper/bicycle": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:40Z",
+      "c_since": "2025-04-23T19:07:13Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:41Z"
+      "i_since": "2025-04-23T19:07:13Z"
     },
     "ton-community/ton-ledger-ts": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:41Z",
+      "c_since": "2025-04-23T19:07:13Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:41Z"
+      "i_since": "2025-04-23T19:07:13Z"
     },
     "ton-blockchain/ton-proxy-application": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:41Z",
+      "c_since": "2025-04-23T19:07:02Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:41Z"
+      "i_since": "2025-04-23T19:07:02Z"
     },
     "tonkeeper/battery-api-swift": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:41Z",
+      "c_since": "2025-04-23T19:07:09Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:42Z"
+      "i_since": "2025-04-23T19:07:09Z"
     },
     "tonkeeper/secp256k1": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:42Z",
+      "c_since": "2025-04-23T19:06:59Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:42Z"
+      "i_since": "2025-04-23T19:06:59Z"
     },
     "ton-community/contract-multisig": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:42Z",
+      "c_since": "2025-04-23T19:07:27Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:42Z"
+      "i_since": "2025-04-23T19:07:27Z"
     },
     "tonkeeper/ton-connect": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:42Z",
+      "c_since": "2025-04-23T19:06:52Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:43Z"
+      "i_since": "2025-04-23T19:06:52Z"
     },
     "tonkeeper/wallet": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:43Z",
+      "c_since": "2025-04-23T19:07:26Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:43Z"
+      "i_since": "2025-04-23T19:07:26Z"
     },
     "tact-lang/llm-fuzz": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:43Z",
+      "c_since": "2025-04-23T19:07:03Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:43Z"
+      "i_since": "2025-04-23T19:07:03Z"
     },
     "ton-community/bip39": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:43Z",
+      "c_since": "2025-04-23T19:06:53Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:44Z"
+      "i_since": "2025-04-23T19:06:53Z"
     },
     "ton-blockchain/multisig": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:44Z",
+      "c_since": "2025-04-23T19:07:23Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:44Z"
+      "i_since": "2025-04-23T19:07:23Z"
     },
     "ton-blockchain/tolk-vscode": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:44Z",
+      "c_since": "2025-04-23T19:07:10Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:44Z"
+      "i_since": "2025-04-23T19:07:10Z"
     },
     "tact-lang/blueprint": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:44Z",
+      "c_since": "2025-04-23T19:06:47Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:45Z"
+      "i_since": "2025-04-23T19:06:47Z"
     },
     "tonkeeper/tongo": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:45Z",
+      "c_since": "2025-04-23T19:07:14Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:45Z"
+      "i_since": "2025-04-23T19:07:14Z"
     },
     "ton-community/ton-kotlin": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:45Z",
+      "c_since": "2025-04-23T19:07:03Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:45Z"
+      "i_since": "2025-04-23T19:07:03Z"
     },
     "tonkeeper/CryptoSwift": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:45Z",
+      "c_since": "2025-04-23T19:07:29Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:46Z"
+      "i_since": "2025-04-23T19:07:29Z"
     },
     "tonkeeper/keystone-sdk-web": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:46Z",
+      "c_since": "2025-04-23T19:07:07Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:46Z"
+      "i_since": "2025-04-23T19:07:07Z"
     },
     "ton-blockchain/func-contest2-tests": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:46Z",
+      "c_since": "2025-04-23T19:07:12Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:46Z"
+      "i_since": "2025-04-23T19:07:12Z"
     },
     "tonkeeper/signer-ios": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:47Z",
+      "c_since": "2025-04-23T19:06:52Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:47Z"
+      "i_since": "2025-04-23T19:06:52Z"
     },
     "ston-fi/omniston-api": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:47Z",
+      "c_since": "2025-04-23T19:06:54Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:47Z"
+      "i_since": "2025-04-23T19:06:54Z"
     },
     "ton-studio/tonspeedrun": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:47Z",
+      "c_since": "2025-04-23T19:07:06Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:48Z"
+      "i_since": "2025-04-23T19:07:06Z"
     },
     "tonkeeper/wallets-list": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:48Z",
+      "c_since": "2025-04-23T19:07:03Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:48Z"
+      "i_since": "2025-04-23T19:07:03Z"
     },
     "ton-community/wallet-contest": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:48Z",
+      "c_since": "2025-04-23T19:07:28Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:48Z"
+      "i_since": "2025-04-23T19:07:28Z"
     },
     "ton-blockchain/bug-bounty": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:48Z",
+      "c_since": "2025-04-23T19:06:55Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:49Z"
+      "i_since": "2025-04-23T19:06:55Z"
     },
     "ton-blockchain/wallet-contract-v5": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:49Z",
+      "c_since": "2025-04-23T19:07:05Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:49Z"
+      "i_since": "2025-04-23T19:07:05Z"
     },
     "ton-blockchain/unfreezer": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:49Z",
+      "c_since": "2025-04-23T19:06:48Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:49Z"
+      "i_since": "2025-04-23T19:06:48Z"
     },
     "ton-blockchain/dns": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:49Z",
+      "c_since": "2025-04-23T19:07:25Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:50Z"
+      "i_since": "2025-04-23T19:07:25Z"
     },
     "tonkeeper/tonapi-go": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:50Z",
+      "c_since": "2025-04-23T19:07:24Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:50Z"
+      "i_since": "2025-04-23T19:07:24Z"
     },
     "tact-lang/ton-contract-dns": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:50Z",
+      "c_since": "2025-04-23T19:07:29Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:50Z"
+      "i_since": "2025-04-23T19:07:30Z"
     },
     "tact-lang/tact-template": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:50Z",
+      "c_since": "2025-04-23T19:07:12Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:51Z"
+      "i_since": "2025-04-23T19:07:13Z"
     },
     "tonkeeper/android": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:51Z",
+      "c_since": "2025-04-23T19:07:06Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:51Z"
+      "i_since": "2025-04-23T19:07:06Z"
     },
     "tact-lang/tact-fift": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:51Z",
+      "c_since": "2025-04-23T19:07:00Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:51Z"
+      "i_since": "2025-04-23T19:07:00Z"
     },
     "tact-lang/ton-coverage": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:51Z",
+      "c_since": "2025-04-23T19:07:25Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:52Z"
+      "i_since": "2025-04-23T19:07:25Z"
     },
     "tonkeeper/TEPs2": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:52Z",
+      "c_since": "2025-04-23T19:07:10Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:52Z"
+      "i_since": "2025-04-23T19:07:10Z"
     },
     "ton-community/hack-ton-berfest2023": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:52Z",
+      "c_since": "2025-04-23T19:07:14Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:52Z"
+      "i_since": "2025-04-23T19:07:14Z"
     },
     "tact-lang/create-tact": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:52Z",
+      "c_since": "2025-04-23T19:07:05Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:53Z"
+      "i_since": "2025-04-23T19:07:05Z"
     },
     "tact-lang/ton-ledger-js": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:53Z",
+      "c_since": "2025-04-23T19:06:48Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:53Z"
+      "i_since": "2025-04-23T19:06:48Z"
     },
     "ston-fi/sandbox-utils": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:53Z",
+      "c_since": "2025-04-23T19:07:07Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:53Z"
+      "i_since": "2025-04-23T19:07:07Z"
     },
     "tonkeeper/2fa-extension": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:53Z",
+      "c_since": "2025-04-23T19:06:56Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:54Z"
+      "i_since": "2025-04-23T19:06:56Z"
     },
     "ton-community/ton-nodejs": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:54Z",
+      "c_since": "2025-04-23T19:06:56Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:54Z"
+      "i_since": "2025-04-23T19:06:56Z"
     },
     "ton-community/ton-onboarding-challenge": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:54Z",
+      "c_since": "2025-04-23T19:07:29Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:54Z"
+      "i_since": "2025-04-23T19:07:29Z"
     },
     "ston-fi/ton-labs-types": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:55Z",
+      "c_since": "2025-04-23T19:07:08Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:55Z"
+      "i_since": "2025-04-23T19:07:08Z"
     },
     "tonkeeper/airdrop-reference-dapp": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:55Z",
+      "c_since": "2025-04-23T19:07:28Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:55Z"
+      "i_since": "2025-04-23T19:07:29Z"
     },
     "OpenBuilders/notcoin-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:55Z",
+      "c_since": "2025-04-23T19:07:06Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:55Z"
+      "i_since": "2025-04-23T19:07:06Z"
     },
     "ton-blockchain/multisig-dapp": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:56Z",
+      "c_since": "2025-04-23T19:07:04Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:56Z"
+      "i_since": "2025-04-23T19:07:04Z"
     },
     "ton-blockchain/ton-awards-2022": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:56Z",
+      "c_since": "2025-04-23T19:07:12Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:56Z"
+      "i_since": "2025-04-23T19:07:12Z"
     },
     "ton-community/tvm-spec": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:56Z",
+      "c_since": "2025-04-23T19:07:17Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:56Z"
+      "i_since": "2025-04-23T19:07:17Z"
     },
     "ton-community/dao": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:57Z",
+      "c_since": "2025-04-23T19:07:02Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:57Z"
+      "i_since": "2025-04-23T19:07:02Z"
     },
     "ton-community/ton-blockchain": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:57Z",
+      "c_since": "2025-04-23T19:07:12Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:57Z"
+      "i_since": "2025-04-23T19:07:12Z"
     },
     "ton-community/tlb-parser": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:57Z",
+      "c_since": "2025-04-23T19:06:59Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:57Z"
+      "i_since": "2025-04-23T19:06:59Z"
     },
     "tonkeeper/ton-mnemonic-swift": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:58Z",
+      "c_since": "2025-04-23T19:06:56Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:58Z"
+      "i_since": "2025-04-23T19:06:56Z"
     },
     "tonkeeper/imgproxy": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:58Z",
+      "c_since": "2025-04-23T19:07:11Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:58Z"
+      "i_since": "2025-04-23T19:07:11Z"
     },
     "ton-community/ton-compiler": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:58Z",
+      "c_since": "2025-04-23T19:06:48Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:59Z"
+      "i_since": "2025-04-23T19:06:48Z"
     },
     "tonkeeper/react-native-encrypted-storage": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:59Z",
+      "c_since": "2025-04-23T19:07:26Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:59Z"
+      "i_since": "2025-04-23T19:07:26Z"
     },
     "ton-blockchain/wallet-android": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:59Z",
+      "c_since": "2025-04-23T19:06:56Z",
       "i_page": 1,
-      "i_since": "2025-04-23T18:59:59Z"
+      "i_since": "2025-04-23T19:06:56Z"
     },
     "ton-community/lite-client": {
       "c_page": 1,
-      "c_since": "2025-04-23T18:59:59Z",
+      "c_since": "2025-04-23T19:06:57Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:00Z"
+      "i_since": "2025-04-23T19:06:57Z"
     },
     "tonkeeper/scam_backoffice_rules": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:00Z",
+      "c_since": "2025-04-23T19:06:56Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:00Z"
+      "i_since": "2025-04-23T19:06:56Z"
     },
     "OpenBuilders/notcoin-clicker": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:00Z",
+      "c_since": "2025-04-23T19:07:23Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:00Z"
+      "i_since": "2025-04-23T19:07:23Z"
     },
     "ton-community/ton-experimental": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:00Z",
+      "c_since": "2025-04-23T19:06:55Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:01Z"
+      "i_since": "2025-04-23T19:06:55Z"
     },
     "ton-blockchain/locker-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:01Z",
+      "c_since": "2025-04-23T19:07:05Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:01Z"
+      "i_since": "2025-04-23T19:07:05Z"
     },
     "ton-blockchain/mytonctrl": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:01Z",
+      "c_since": "2025-04-23T19:07:23Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:01Z"
+      "i_since": "2025-04-23T19:07:23Z"
     },
     "tact-lang/lite-proof": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:01Z",
+      "c_since": "2025-04-23T19:06:57Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:02Z"
+      "i_since": "2025-04-23T19:06:58Z"
     },
     "ton-community/nft-sdk": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:02Z",
+      "c_since": "2025-04-23T19:07:26Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:02Z"
+      "i_since": "2025-04-23T19:07:26Z"
     },
     "tonkeeper/tonconsole-docs": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:02Z",
+      "c_since": "2025-04-23T19:06:54Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:02Z"
+      "i_since": "2025-04-23T19:06:54Z"
     },
     "ton-community/ton-docs": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:03Z",
+      "c_since": "2025-04-23T19:07:24Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:03Z"
+      "i_since": "2025-04-23T19:07:24Z"
     },
     "tact-lang/tact-by-example": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:03Z",
+      "c_since": "2025-04-23T19:07:26Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:03Z"
+      "i_since": "2025-04-23T19:07:26Z"
     },
     "ton-blockchain/highload-wallet-secp256k1": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:03Z",
+      "c_since": "2025-04-23T19:07:05Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:03Z"
+      "i_since": "2025-04-23T19:07:05Z"
     },
     "ton-org/ton-emulator": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:04Z",
+      "c_since": "2025-04-23T19:06:58Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:04Z"
+      "i_since": "2025-04-23T19:06:58Z"
     },
     "ton-blockchain/token-bridge-solidity": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:04Z",
+      "c_since": "2025-04-23T19:06:58Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:04Z"
+      "i_since": "2025-04-23T19:06:58Z"
     },
     "ton-community/ton-vm": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:04Z",
+      "c_since": "2025-04-23T19:07:07Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:05Z"
+      "i_since": "2025-04-23T19:07:07Z"
     },
     "ton-studio/ton-etl": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:05Z",
+      "c_since": "2025-04-23T19:07:29Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:05Z"
+      "i_since": "2025-04-23T19:07:29Z"
     },
     "ston-fi/dex-core": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:05Z",
+      "c_since": "2025-04-23T19:06:51Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:05Z"
+      "i_since": "2025-04-23T19:06:51Z"
     },
     "ton-community/fpm": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:05Z",
+      "c_since": "2025-04-23T19:07:29Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:06Z"
+      "i_since": "2025-04-23T19:07:29Z"
     },
     "ton-community/tsc5": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:06Z",
+      "c_since": "2025-04-23T19:07:13Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:06Z"
+      "i_since": "2025-04-23T19:07:13Z"
     },
     "ston-fi/omniston-sdk": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:06Z",
+      "c_since": "2025-04-23T19:07:00Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:06Z"
+      "i_since": "2025-04-23T19:07:00Z"
     },
     "ton-blockchain/mytonctrl_bot": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:06Z",
+      "c_since": "2025-04-23T19:07:01Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:07Z"
+      "i_since": "2025-04-23T19:07:01Z"
     },
     "ton-blockchain/token-bridge": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:07Z",
+      "c_since": "2025-04-23T19:06:55Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:07Z"
+      "i_since": "2025-04-23T19:06:55Z"
     },
     "tonkeeper/tonapi-js": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:07Z",
+      "c_since": "2025-04-23T19:07:19Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:07Z"
+      "i_since": "2025-04-23T19:07:19Z"
     },
     "ton-community/simple-distributor": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:07Z",
+      "c_since": "2025-04-23T19:06:57Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:08Z"
+      "i_since": "2025-04-23T19:06:57Z"
     },
     "tonkeeper/tonkeeper-web": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:08Z",
+      "c_since": "2025-04-23T19:07:04Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:08Z"
+      "i_since": "2025-04-23T19:07:04Z"
     },
     "tact-lang/ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:08Z",
+      "c_since": "2025-04-23T19:07:27Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:08Z"
+      "i_since": "2025-04-23T19:07:27Z"
     },
     "ton-community/compressed-nft-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:08Z",
+      "c_since": "2025-04-23T19:06:51Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:09Z"
+      "i_since": "2025-04-23T19:06:51Z"
     },
     "ton-blockchain/ton-docker-ctrl": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:09Z",
+      "c_since": "2025-04-23T19:07:30Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:09Z"
+      "i_since": "2025-04-23T19:07:30Z"
     },
     "tonkeeper/claim-api-go": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:09Z",
+      "c_since": "2025-04-23T19:06:55Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:09Z"
+      "i_since": "2025-04-23T19:06:55Z"
     },
     "tonkeeper/api_monitoring_stats": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:10Z",
+      "c_since": "2025-04-23T19:07:13Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:10Z"
+      "i_since": "2025-04-23T19:07:13Z"
     },
     "ton-community/tsc4-solutions": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:10Z",
+      "c_since": "2025-04-23T19:07:14Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:10Z"
+      "i_since": "2025-04-23T19:07:14Z"
     },
     "ton-community/tlb-editor": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:10Z",
+      "c_since": "2025-04-23T19:07:01Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:10Z"
+      "i_since": "2025-04-23T19:07:01Z"
     },
     "tonkeeper/zson": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:11Z",
+      "c_since": "2025-04-23T19:07:25Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:11Z"
+      "i_since": "2025-04-23T19:07:25Z"
     },
     "tact-lang/lite-client": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:11Z",
+      "c_since": "2025-04-23T19:07:00Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:11Z"
+      "i_since": "2025-04-23T19:07:00Z"
     },
     "ton-org/ton-crypto": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:11Z",
+      "c_since": "2025-04-23T19:07:07Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:11Z"
+      "i_since": "2025-04-23T19:07:07Z"
     },
     "ton-community/contract-verifier-sdk": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:12Z",
+      "c_since": "2025-04-23T19:07:16Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:12Z"
+      "i_since": "2025-04-23T19:07:17Z"
     },
     "tact-lang/tact.vim": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:12Z",
+      "c_since": "2025-04-23T19:07:30Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:12Z"
+      "i_since": "2025-04-23T19:07:30Z"
     },
     "ton-community/tsc4": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:12Z",
+      "c_since": "2025-04-23T19:07:12Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:12Z"
+      "i_since": "2025-04-23T19:07:12Z"
     },
     "ton-org/create-ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:13Z",
+      "c_since": "2025-04-23T19:06:46Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:13Z"
+      "i_since": "2025-04-23T19:06:46Z"
     },
     "ton-org/ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:13Z",
+      "c_since": "2025-04-23T19:07:27Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:13Z"
+      "i_since": "2025-04-23T19:07:27Z"
     },
     "ton-community/twa-template": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:13Z",
+      "c_since": "2025-04-23T19:06:57Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:13Z"
+      "i_since": "2025-04-23T19:06:57Z"
     },
     "ton-blockchain/public_representatives": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:14Z",
+      "c_since": "2025-04-23T19:07:11Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:14Z"
+      "i_since": "2025-04-23T19:07:11Z"
     },
     "ton-community/ton-api-v4": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:14Z",
+      "c_since": "2025-04-23T19:06:54Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:14Z"
+      "i_since": "2025-04-23T19:06:54Z"
     },
     "ston-fi/ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:14Z",
+      "c_since": "2025-04-23T19:07:13Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:15Z"
+      "i_since": "2025-04-23T19:07:13Z"
     },
     "tact-lang/awesome-tact": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:15Z",
+      "c_since": "2025-04-23T19:07:22Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:15Z"
+      "i_since": "2025-04-23T19:07:22Z"
     },
     "tonkeeper/ton-keychain": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:15Z",
+      "c_since": "2025-04-23T19:07:18Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:15Z"
+      "i_since": "2025-04-23T19:07:18Z"
     },
     "tact-lang/web-ide": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:15Z",
+      "c_since": "2025-04-23T19:07:06Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:16Z"
+      "i_since": "2025-04-23T19:07:06Z"
     },
     "tact-lang/prism-ton": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:16Z",
+      "c_since": "2025-04-23T19:07:25Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:16Z"
+      "i_since": "2025-04-23T19:07:25Z"
     },
     "ton-blockchain/governance-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:16Z",
+      "c_since": "2025-04-23T19:06:46Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:16Z"
+      "i_since": "2025-04-23T19:06:47Z"
     },
     "ston-fi/faucet-token-contracts": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:16Z",
+      "c_since": "2025-04-23T19:07:09Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:17Z"
+      "i_since": "2025-04-23T19:07:09Z"
     },
     "ton-blockchain/single-nominator": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:17Z",
+      "c_since": "2025-04-23T19:07:06Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:17Z"
+      "i_since": "2025-04-23T19:07:06Z"
     },
     "ton-blockchain/dns-contract": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:17Z",
+      "c_since": "2025-04-23T19:07:28Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:17Z"
+      "i_since": "2025-04-23T19:07:28Z"
     },
     "ton-blockchain/ton-trustless-bridge-relayer": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:18Z",
+      "c_since": "2025-04-23T19:07:08Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:18Z"
+      "i_since": "2025-04-23T19:07:08Z"
     },
     "ston-fi/adnl-rs": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:18Z",
+      "c_since": "2025-04-23T19:07:10Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:18Z"
+      "i_since": "2025-04-23T19:07:11Z"
     },
     "tonkeeper/dns-image-gen": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:18Z",
+      "c_since": "2025-04-23T19:07:27Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:18Z"
+      "i_since": "2025-04-23T19:07:27Z"
     },
     "tonkeeper/tonapi": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:19Z",
+      "c_since": "2025-04-23T19:07:30Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:19Z"
+      "i_since": "2025-04-23T19:07:30Z"
     },
     "tact-lang/tvm-spec": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:19Z",
+      "c_since": "2025-04-23T19:06:59Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:19Z"
+      "i_since": "2025-04-23T19:06:59Z"
     },
     "tact-lang/website": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:19Z",
+      "c_since": "2025-04-23T19:07:18Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:20Z"
+      "i_since": "2025-04-23T19:07:18Z"
     },
     "tonkeeper/hw-transport-ios-ble": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:20Z",
+      "c_since": "2025-04-23T19:06:54Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:20Z"
+      "i_since": "2025-04-23T19:06:55Z"
     },
     "tact-lang/dex": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:20Z",
+      "c_since": "2025-04-23T19:07:03Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:20Z"
+      "i_since": "2025-04-23T19:07:03Z"
     },
     "ton-community/flappy-bird-pixi": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:20Z",
+      "c_since": "2025-04-23T19:06:57Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:21Z"
+      "i_since": "2025-04-23T19:06:57Z"
     },
     "ton-blockchain/bridge": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:21Z",
+      "c_since": "2025-04-23T19:06:49Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:21Z"
+      "i_since": "2025-04-23T19:06:49Z"
     },
     "tonkeeper/tonapi-dapp-example": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:21Z",
+      "c_since": "2025-04-23T19:07:14Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:21Z"
+      "i_since": "2025-04-23T19:07:14Z"
     },
     "ton-blockchain/wallet-android-new": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:21Z",
+      "c_since": "2025-04-23T19:06:59Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:22Z"
+      "i_since": "2025-04-23T19:06:59Z"
     },
     "ton-blockchain/func-contest3": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:22Z",
+      "c_since": "2025-04-23T19:06:53Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:22Z"
+      "i_since": "2025-04-23T19:06:53Z"
     },
     "ton-blockchain/convert-func-to-tolk": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:22Z",
+      "c_since": "2025-04-23T19:07:08Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:22Z"
+      "i_since": "2025-04-23T19:07:08Z"
     },
     "tact-lang/ton-jest": {
       "c_page": 1,
-      "c_since": "2025-04-23T19:00:22Z",
+      "c_since": "2025-04-23T19:07:08Z",
       "i_page": 1,
-      "i_since": "2025-04-23T19:00:23Z"
+      "i_since": "2025-04-23T19:07:08Z"
     }
   }
 }

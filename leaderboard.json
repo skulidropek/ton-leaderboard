@@ -1,3 +1,22 @@
 {
-  "users": []
+  "users": [
+    {
+      "login": "novusnota",
+      "profile_url": "https://github.com/novusnota",
+      "commits": [],
+      "issues": [
+        {
+          "number": 55,
+          "title": "Housekeeping of the website: a big list of small things to resolve",
+          "url": "https://github.com/tact-lang/website/issues/55",
+          "repo": "https://github.com/tact-lang/website",
+          "state": "open",
+          "created_at": "2025-04-21T05:30:45Z",
+          "is_official": true,
+          "type": "issue"
+        }
+      ],
+      "pull_requests": []
+    }
+  ]
 }
