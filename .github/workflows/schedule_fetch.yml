@@ -2,6 +2,12 @@
 
 name: Scheduled Fetch Commits
 
+# Ограничиваем одновременный запуск только одним активным workflow в группе "scheduled-fetch-commits"
+concurrency:
+  group: scheduled-fetch-commits
+  # Если новый запуск попал в очередь, он подождёт, пока старый не завершится (не отменяем in-progress)
+  cancel-in-progress: false
+
 on:
   schedule:
     - cron: '*/5 * * * *'
@@ -15,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./   # корень репозитория
+        working-directory: .
 
     steps:
       - name: Checkout code
@@ -39,17 +45,15 @@ jobs:
         run: python fetch_commits.py
 
       - name: Show diff for debug
-        run: git status && git diff
+        run: |
+          git status
+          git diff
 
       - name: Commit & Push if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # добавляем только файлы, которые точно должны измениться
           git add leaderboard.json commit_cache.json
-
-          # если есть staged изменения — пушим
           if git diff --cached --quiet; then
             echo "✔ No changes detected."
           else
