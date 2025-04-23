@@ -1,0 +1,34 @@
+name: Scheduled Fetch Commits
+
+on:
+    schedule:
+      - cron: '*/5 * * * *'
+    workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run fetch_commits and update cache
+        run: |
+          python fetch_commits.py > leaderboard.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add leaderboard.txt commit_cache.json
+          git diff --quiet || git commit -m "Update leaderboard and cache"
+          git push
