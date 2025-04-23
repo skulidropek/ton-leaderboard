@@ -1,3 +1,22 @@
 {
-  "users": []
+  "users": [
+    {
+      "login": "i582",
+      "profile_url": "https://github.com/i582",
+      "commits": [],
+      "issues": [],
+      "pull_requests": [
+        {
+          "number": 2886,
+          "title": "feat: add an ` opcode` method for any message to obtain message opcode",
+          "url": "https://github.com/tact-lang/tact/pull/2886",
+          "repo": "https://github.com/tact-lang/tact",
+          "state": "open",
+          "created_at": "2025-04-21T16:17:39Z",
+          "is_official": true,
+          "type": "pull_request"
+        }
+      ]
+    }
+  ]
 }
