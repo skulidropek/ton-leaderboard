@@ -2,12 +2,13 @@
 """
 fetch_commits.py — автономный сборщик статистики:
 
-• ton_repos.json — организации или owner/repo
-• cache.json     — единый кэш (создаётся сам)
-• Первый запуск — полный дамп всех репозиториев
-• Дальше — инкрементально только новые коммиты, issue, PR
-• Сохраняет в leaderboard.json
-• Логи процессов (какие репо и страницы обрабатываются)
+• Читает ton_repos.json (организации или owner/repo)
+• Хранит единый кэш cache.json
+• При первом запуске делает полный дамп всех репо
+• Дальше инкрементально добавляет только новые коммиты, issue и PR
+• В каждом коммите сохраняет список изменённых файлов
+• Логирует процесс по репозиториям/страницам
+• Выдаёт итог в leaderboard.json
 """
 
 import os
@@ -33,9 +34,9 @@ def log(level: str, msg: str):
 def utc_now() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
-def gh_headers():
+def gh_headers(auth: bool = True):
     h = {"Accept": "application/vnd.github+json"}
-    if (token := os.getenv("GITHUB_TOKEN")):
+    if auth and (token := os.getenv("GITHUB_TOKEN")):
         h["Authorization"] = f"Bearer {token}"
     return h
 
@@ -43,18 +44,17 @@ def gh_headers():
 EMPTY_CACHE = {
     "commits": [],
     "issues": [],
-    "orgs": {},   # org -> { "repos": [...], "ts": timestamp }
-    "repos": {}   # "owner/repo" -> { "c_since","c_page","i_since","i_page" }
+    "orgs": {},   # org → { "repos": [...], "ts": timestamp }
+    "repos": {}   # "owner/repo" → { "c_since","c_page","i_since","i_page" }
 }
 
 def load_cache() -> dict:
-    if pathlib.Path(CACHE_FILE).exists():
+    path = pathlib.Path(CACHE_FILE)
+    if path.exists():
         try:
-            data = json.load(open(CACHE_FILE, encoding="utf-8"))
+            data = json.load(open(path, encoding="utf-8"))
             if isinstance(data, dict):
                 return data
-            else:
-                raise ValueError("cache.json is not an object")
         except Exception as e:
             log("warn", f"Broken {CACHE_FILE} ({e}), resetting")
     return EMPTY_CACHE.copy()
@@ -63,18 +63,22 @@ def save_cache(cache: dict):
     json.dump(cache, open(CACHE_FILE, "w", encoding="utf-8"),
               indent=2, ensure_ascii=False)
 
-# === org → repos ===
+# === org → repos (без Authorization!) ===
 def org_repos_from_api(org: str) -> list[str]:
     repos = []
     page = 1
+    headers = gh_headers(auth=False)
     while True:
         log("info", f"[ORG] listing {org}, page {page}")
         resp = requests.get(
             f"https://api.github.com/orgs/{org}/repos",
-            headers=gh_headers(),
+            headers=headers,
             params={"per_page": PER_PAGE, "page": page},
             timeout=30
         )
+        if resp.status_code == 404:
+            log("warn", f"[ORG] {org} not found (404)")
+            break
         if not resp.ok:
             log("warn", f"[ORG] {org} list error: {resp.status_code}")
             break
@@ -88,11 +92,12 @@ def org_repos_from_api(org: str) -> list[str]:
 
 def get_repos_list(cache: dict) -> dict[str, bool]:
     if not pathlib.Path(REPOS_FILE).exists():
-        log("error", f"{REPOS_FILE} not found"); sys.exit(1)
+        log("error", f"{REPOS_FILE} not found")
+        sys.exit(1)
     cfg = json.load(open(REPOS_FILE, encoding="utf-8"))
 
-    def normalize(e: str) -> str | None:
-        e = e.strip()
+    def normalize(entry: str) -> str | None:
+        e = entry.strip()
         if e.startswith(("http://", "https://")):
             p = urlparse(e)
             path = p.path.lstrip("/").rstrip("/")
@@ -108,11 +113,9 @@ def get_repos_list(cache: dict) -> dict[str, bool]:
         for x in src:
             parts = x.split("/")
             if len(parts) == 1:
-                # организация — проверяем кэш
                 meta = cache["orgs"].get(x, {})
                 repos = meta.get("repos", [])
                 ts    = meta.get("ts", 0)
-                # если список пуст или устарел — перезапрашиваем
                 if not repos or now - ts > ORG_TTL:
                     fetched = org_repos_from_api(x)
                     cache["orgs"][x] = {"repos": fetched, "ts": now}
@@ -124,9 +127,9 @@ def get_repos_list(cache: dict) -> dict[str, bool]:
                 log("warn", f"Bad entry in {REPOS_FILE}: {x}")
         return out
 
-    mapped = {r: True for r in expand(official)}
-    mapped.update({r: False for r in expand(unofficial)})
-    return mapped
+    result = {r: True  for r in expand(official)}
+    result.update({r: False for r in expand(unofficial)})
+    return result
 
 # === fetch commits & issues ===
 def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
@@ -138,10 +141,13 @@ def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
 
     while True:
         params = {"per_page": PER_PAGE, "page": page}
-        if since: params["since"] = since
+        if since:
+            params["since"] = since
         resp = requests.get(
             f"https://api.github.com/repos/{repo}/commits",
-            headers=gh_headers(), params=params, timeout=30
+            headers=gh_headers(),
+            params=params,
+            timeout=30
         )
         if not resp.ok:
             log("warn", f"[{repo}] commits error: {resp.status_code}")
@@ -154,12 +160,11 @@ def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
             sha = c.get("sha")
             if not sha or sha in seen:
                 continue
-            # подробности для списка файлов
             det = requests.get(
                 f"https://api.github.com/repos/{repo}/commits/{sha}",
                 headers=gh_headers(), timeout=30
             ).json()
-            files = [fitem.get("filename") for fitem in det.get("files", []) if fitem.get("filename")]
+            files = [f["filename"] for f in det.get("files", []) if f.get("filename")]
 
             author = (c.get("author") and c["author"].get("login")) \
                      or c["commit"]["author"].get("name", "unknown")
@@ -191,10 +196,13 @@ def fetch_items(repo: str, is_off: bool, st: dict, seen: set):
 
     while True:
         params = {"state": "all", "per_page": PER_PAGE, "page": page}
-        if since: params["since"] = since
+        if since:
+            params["since"] = since
         resp = requests.get(
             f"https://api.github.com/repos/{repo}/issues",
-            headers=gh_headers(), params=params, timeout=30
+            headers=gh_headers(),
+            params=params,
+            timeout=30
         )
         if not resp.ok:
             log("warn", f"[{repo}] issues error: {resp.status_code}")
@@ -254,14 +262,12 @@ def main():
         log("info", f"--- Processing {repo} (official={is_off}) ---")
         st = repo_state.setdefault(repo, {})
 
-        # коммиты
         for author, cm in fetch_commits(repo, is_off, st, seen_shas):
             u = users[author]
             u["login"]       = author
             u["profile_url"] = f"https://github.com/{author}"
             u["commits"].append(cm)
 
-        # issues и PR
         for author, it in fetch_items(repo, is_off, st, seen_issues):
             u = users[author]
             u["login"]       = author
@@ -269,12 +275,10 @@ def main():
             col = "pull_requests" if it["type"] == "pull_request" else "issues"
             u[col].append(it)
 
-    # сохранить кэш
     cache["commits"] = list(seen_shas)
     cache["issues"]  = list(seen_issues)
     save_cache(cache)
 
-    # сохранить итоговый JSON
     out = {"users": list(users.values())}
     json.dump(out, open(OUTPUT_FILE, "w", encoding="utf-8"),
               indent=2, ensure_ascii=False)
