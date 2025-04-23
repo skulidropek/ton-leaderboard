@@ -2,7 +2,6 @@
 
 name: Scheduled Fetch Commits
 
-# Только один активный запуск в группе “scheduled-fetch-commits”
 concurrency:
   group: scheduled-fetch-commits
   cancel-in-progress: false
@@ -52,7 +51,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # добавляем leaderboard.json и cache.json
+          # Добавляем оба файла: витрину и единый кеш
           git add leaderboard.json cache.json
 
           if git diff --cached --quiet; then
