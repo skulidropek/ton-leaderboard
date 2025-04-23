@@ -2,10 +2,9 @@
 
 name: Scheduled Fetch Commits
 
-# Ограничиваем одновременный запуск только одним активным workflow в группе "scheduled-fetch-commits"
+# Только один активный запуск в группе “scheduled-fetch-commits”
 concurrency:
   group: scheduled-fetch-commits
-  # Если новый запуск попал в очередь, он подождёт, пока старый не завершится (не отменяем in-progress)
   cancel-in-progress: false
 
 on:
@@ -24,14 +23,14 @@ jobs:
         working-directory: .
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
           fetch-depth: 0
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
@@ -39,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run fetch_commits (writes leaderboard.json & commit_cache.json)
+      - name: Run fetch_commits (writes leaderboard.json & cache.json)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python fetch_commits.py
@@ -53,10 +52,12 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add leaderboard.json commit_cache.json
+          # добавляем leaderboard.json и cache.json
+          git add leaderboard.json cache.json
+
           if git diff --cached --quiet; then
-            echo "✔ No changes detected."
+            echo "✔ No changes to commit"
           else
-            git commit -m "Update leaderboard.json and commit_cache.json"
+            git commit -m "Update leaderboard.json and cache.json"
             git push
           fi
