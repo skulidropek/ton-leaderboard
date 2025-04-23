@@ -1,9 +1,12 @@
+# .github/workflows/schedule_fetch.yml
+
 name: Scheduled Fetch Commits
 
 on:
-    schedule:
-      - cron: '*/5 * * * *'
-    workflow_dispatch:
+  schedule:
+    # Запуск каждые 5 минут (только для тестов)
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   fetch:
@@ -13,6 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
+          # чтобы workflow мог пушить изменения обратно
           persist-credentials: true
           fetch-depth: 0
 
@@ -24,11 +28,17 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run fetch_commits and update cache
+      - name: Run fetch_commits
+        env:
+          # встроенный токен, не нужно создавать вручную
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python fetch_commits.py > leaderboard.txt
+
+      - name: Commit results if changed
         run: |
-          python fetch_commits.py > leaderboard.txt
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add leaderboard.txt commit_cache.json
+          # если есть изменения — закоммитить и запушить
           git diff --quiet || git commit -m "Update leaderboard and cache"
           git push

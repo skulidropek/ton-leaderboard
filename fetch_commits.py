@@ -1,116 +1,81 @@
 #!/usr/bin/env python3
 """
-fetch_commits.py — выкачивает коммиты из хардкодного списка организаций и
-дополнительных репозиториев, выводит топ-авторов по количеству коммитов.
-Добавлена поддержка GITHUB_TOKEN для обхода rate-limit и корректная работа stderr.
+fetch_commits.py — выкачивает все коммиты из указанного репозитория
+и выводит топ-авторов по количеству коммитов (без базы данных).
+Исправлена обработка случая, когда GitHub API возвращает "author": null.
 """
 
-import requests
+import os
+import sys
 import time
 import collections
-import sys
-import os
+import requests
 
-# Проверка версии Python
-if sys.version_info < (3, 1):
-    sys.stderr.write("Error: Python 3.1 or later is required.\n")
-    sys.exit(1)
-
-# GitHub API settings
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
-HEADERS = {'Accept': 'application/vnd.github+json'}
-if GITHUB_TOKEN:
-    HEADERS['Authorization'] = f"Bearer {GITHUB_TOKEN}"
-else:
-    sys.stderr.write("[warn]: No GITHUB_TOKEN set, rate-limit = 60 req/hour.\n")
-
-PER_PAGE = 100  # число коммитов на страницу
-SLEEP = 0.1     # задержка между запросами (сек)
-
-# === Настройка ===
-ORGS = [
-    "tact-lang",
-    # Другие организации при необходимости
-]
-REPOS = [
-    # "user/custom-repo",
-]
+# === config ===
+REPO     = "tact-lang/tact"
+PER_PAGE = 100
 
 
-def get_commits(repo: str):
-    authors = []
+def log(level: str, msg: str):
+    """Логирование в stderr с указанием уровня."""
+    sys.stderr.write(f"[{level}] {msg}\n")
+
+
+def get_commits(repo: str) -> list[str]:
+    """
+    Выкачивает все коммиты из репозитория.
+    Если commit['author'] is None, берём имя из commit['commit']['author']['name'].
+    """
+    token = os.getenv("GITHUB_TOKEN")
+    headers = {"Accept": "application/vnd.github+json"}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    else:
+        log("warn", "No GITHUB_TOKEN set, rate-limit = 60 req/hour.")
+
+    all_authors: list[str] = []
     page = 1
+
     while True:
+        log("info", f"Fetching commits for {repo} (page {page})…")
         url = f"https://api.github.com/repos/{repo}/commits"
-        try:
-            resp = requests.get(url, headers=HEADERS, params={"per_page": PER_PAGE, "page": page}, timeout=30)
-            resp.raise_for_status()
-        except requests.exceptions.HTTPError:
-            if resp.status_code == 403:
-                sys.stderr.write(f"[warn]: 403 Forbidden for {repo}.\n")
-                return authors
-            else:
-                raise
+        resp = requests.get(url, headers=headers, params={"per_page": PER_PAGE, "page": page}, timeout=30)
+
+        if not resp.ok:
+            log("warn", f"Error fetching {repo}: {resp.status_code} {resp.text}")
+            break
+
         data = resp.json()
         if not data:
             break
-        for c in data:
-            author = (
-                c.get("author", {}).get("login") or
-                c["commit"]["author"].get("name", "unknown")
-            )
-            authors.append(author)
-        page += 1
-        time.sleep(SLEEP)
-    return authors
 
-
-def get_org_repos(org: str):
-    repos = []
-    page = 1
-    while True:
-        url = f"https://api.github.com/orgs/{org}/repos"
-        try:
-            resp = requests.get(url, headers=HEADERS, params={"per_page": PER_PAGE, "page": page}, timeout=30)
-            resp.raise_for_status()
-        except requests.exceptions.HTTPError:
-            if resp.status_code == 403:
-                sys.stderr.write(f"[warn]: 403 Forbidden for org {org}.\n")
-                return repos
+        for commit in data:
+            # GitHub API иногда даёт "author": null
+            if commit.get("author") is not None:
+                author = (
+                    commit["author"].get("login")
+                    or commit["commit"]["author"].get("name", "unknown")
+                )
             else:
-                raise
-        data = resp.json()
-        if not data:
-            break
-        repos.extend([f"{org}/{r['name']}" for r in data])
+                author = commit["commit"]["author"].get("name", "unknown")
+
+            all_authors.append(author)
+
         page += 1
-        time.sleep(SLEEP)
-    return repos
+        time.sleep(0.1)
+
+    return all_authors
 
 
 def main():
-    # Собираем репозитории
-    repos = []
-    for org in ORGS:
-        sys.stderr.write(f"[info]: Loading repos for org '{org}'...\n")
-        repos.extend(get_org_repos(org))
-    repos.extend(REPOS)
-    if not repos:
-        sys.stderr.write("[error]: No repos to fetch.\n")
-        sys.exit(1)
+    commits = get_commits(REPO)
+    counter = collections.Counter(commits)
+    total = len(commits)
 
-    # Сбор авторов
-    all_authors = []
-    for repo in repos:
-        sys.stderr.write(f"[info]: Fetching commits for {repo}...\n")
-        all_authors.extend(get_commits(repo))
-
-    counter = collections.Counter(all_authors)
-    total = sum(counter.values())
-    print(f"Top contributors (total commits: {total}):\n")
+    print(f"Top contributors in {REPO} (total {total} commits):\n")
     for author, count in counter.most_common(20):
-        print(f"{count:>6}  {author}")
+        print(f"{count:>4}  {author}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
