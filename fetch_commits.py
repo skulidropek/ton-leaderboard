@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """
-fetch_commits.py — автономный сборщик статистики:
+fetch_commits.py — автономный сборщик статистики с PAT (5 000 req/ч):
 
 • Читает ton_repos.json (организации или owner/repo)
 • Хранит единый кэш cache.json
 • При первом запуске делает полный дамп всех репо
 • Дальше инкрементально добавляет только новые коммиты, issue и PR
-• В каждом коммите сохраняет список изменённых файлов
+• Сохраняет список изменённых файлов в каждом коммите
 • Логирует процесс по репозиториям/страницам
-• Выдаёт итог в leaderboard.json
+• Пишет итог в leaderboard.json
+
+Требует в секретах GitHub Actions задать PAT_TOKEN с правами public_repo.
 """
 
 import os
@@ -34,25 +36,30 @@ def log(level: str, msg: str):
 def utc_now() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
-def gh_headers(auth: bool = True):
+def gh_headers():
+    """
+    Собираем заголовки с токеном:
+    Сначала смотрим PAT_TOKEN, затем GITHUB_TOKEN.
+    """
     h = {"Accept": "application/vnd.github+json"}
-    if auth and (token := os.getenv("GITHUB_TOKEN")):
-        h["Authorization"] = f"Bearer {token}"
+    tok = os.getenv("PAT_TOKEN") or os.getenv("GITHUB_TOKEN")
+    if tok:
+        h["Authorization"] = f"Bearer {tok}"
     return h
 
-# === cache helpers ===
+# === cache ===
 EMPTY_CACHE = {
     "commits": [],
     "issues": [],
     "orgs": {},   # org → { "repos": [...], "ts": timestamp }
-    "repos": {}   # "owner/repo" → { "c_since","c_page","i_since","i_page" }
+    "repos": {}   # owner/repo → { "c_since","c_page","i_since","i_page" }
 }
 
 def load_cache() -> dict:
-    path = pathlib.Path(CACHE_FILE)
-    if path.exists():
+    p = pathlib.Path(CACHE_FILE)
+    if p.exists():
         try:
-            data = json.load(open(path, encoding="utf-8"))
+            data = json.load(open(p, encoding="utf-8"))
             if isinstance(data, dict):
                 return data
         except Exception as e:
@@ -63,16 +70,15 @@ def save_cache(cache: dict):
     json.dump(cache, open(CACHE_FILE, "w", encoding="utf-8"),
               indent=2, ensure_ascii=False)
 
-# === org → repos (без Authorization!) ===
+# === list organization repos ===
 def org_repos_from_api(org: str) -> list[str]:
     repos = []
     page = 1
-    headers = gh_headers(auth=False)
     while True:
         log("info", f"[ORG] listing {org}, page {page}")
         resp = requests.get(
             f"https://api.github.com/orgs/{org}/repos",
-            headers=headers,
+            headers=gh_headers(),
             params={"per_page": PER_PAGE, "page": page},
             timeout=30
         )
@@ -92,8 +98,7 @@ def org_repos_from_api(org: str) -> list[str]:
 
 def get_repos_list(cache: dict) -> dict[str, bool]:
     if not pathlib.Path(REPOS_FILE).exists():
-        log("error", f"{REPOS_FILE} not found")
-        sys.exit(1)
+        log("error", f"{REPOS_FILE} not found"); sys.exit(1)
     cfg = json.load(open(REPOS_FILE, encoding="utf-8"))
 
     def normalize(entry: str) -> str | None:
@@ -113,7 +118,7 @@ def get_repos_list(cache: dict) -> dict[str, bool]:
         for x in src:
             parts = x.split("/")
             if len(parts) == 1:
-                meta = cache["orgs"].get(x, {})
+                meta  = cache["orgs"].get(x, {})
                 repos = meta.get("repos", [])
                 ts    = meta.get("ts", 0)
                 if not repos or now - ts > ORG_TTL:
@@ -131,7 +136,7 @@ def get_repos_list(cache: dict) -> dict[str, bool]:
     result.update({r: False for r in expand(unofficial)})
     return result
 
-# === fetch commits & issues ===
+# === fetch commits and issues ===
 def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
     owner, name = repo.split("/")
     base = f"https://github.com/{owner}/{name}"

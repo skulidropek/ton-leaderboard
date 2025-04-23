@@ -27,7 +27,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
-          fetch-depth: 0        # получаем полный history для ребейза
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -39,7 +39,7 @@ jobs:
 
       - name: Run fetch_commits (writes leaderboard.json & cache.json)
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: python fetch_commits.py
 
       - name: Show diff for debug
@@ -58,10 +58,7 @@ jobs:
             echo "✔ No changes to commit"
           else
             git commit -m "Update leaderboard.json and cache.json"
-
-            # Подтягиваем возможные upstream-изменения и ребейзим
             git fetch origin main
             git rebase origin/main
-
             git push
           fi
