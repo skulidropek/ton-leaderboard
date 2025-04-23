@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-fetch_commits.py — автономный сборщик статистики с PAT (5 000 req/ч) и накоплением истории в leaderboard.json:
+fetch_commits.py — автономный сборщик статистики с PAT (5 000 req/ч) и накоплением истории:
 
 • Читает ton_repos.json (организации или owner/repo)
 • Хранит единый кэш cache.json для incremental fetch (commits/issues)
@@ -31,12 +31,10 @@ OUTPUT_FILE = "leaderboard.json"
 PER_PAGE    = 100
 ORG_TTL     = 7 * 24 * 3600  # 7 дней
 
-
 def safe_get(url, **kw):
     backoff = 1
     while True:
         r = requests.get(url, **kw)
-        # Обработка secondary rate limit и forbidden
         if r.status_code in (429, 403):
             msg = ""
             if r.headers.get("Content-Type", "").startswith("application/json"):
@@ -44,14 +42,16 @@ def safe_get(url, **kw):
                     msg = r.json().get("message", "").lower()
                 except Exception:
                     pass
+            # secondary rate limit
             if r.status_code == 403 and "secondary rate limit" in msg:
                 retry = int(r.headers.get("Retry-After", backoff))
                 log("warn", f"Secondary rate limit on {url}, sleeping {retry}s")
                 time.sleep(retry)
                 continue
+            # forbidden
             if r.status_code == 403:
                 raise RuntimeError(f"403 Forbidden {url} → {msg or 'token lacks permission'}")
-            # 429 too many requests
+            # too many requests
             retry = int(r.headers.get("Retry-After", backoff))
             log("warn", f"429 from {url}, sleeping {retry}s")
             time.sleep(retry)
@@ -59,20 +59,13 @@ def safe_get(url, **kw):
             continue
         return r
 
-
 def log(level: str, msg: str):
     sys.stderr.write(f"[{level}] {msg}\n")
-
 
 def utc_now() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
-
-def gh_headers() -> dict[str, str]:
-    """
-    Формируем заголовки для GitHub REST v3.
-    Требуем наличия PAT, иначе падаем — так скрипт никогда не пойдёт анонимно.
-    """
+def gh_headers() -> dict:
     token = os.getenv("PAT_TOKEN") or os.getenv("GITHUB_TOKEN")
     if not token:
         raise RuntimeError("PAT_TOKEN или GITHUB_TOKEN не заданы в env")
@@ -91,7 +84,6 @@ EMPTY_CACHE = {
     "repos": {}   # owner/repo → { "c_since","c_page","i_since","i_page" }
 }
 
-
 def load_cache() -> dict:
     p = pathlib.Path(CACHE_FILE)
     if p.exists():
@@ -103,13 +95,12 @@ def load_cache() -> dict:
             log("warn", f"Broken {CACHE_FILE} ({e}), resetting")
     return EMPTY_CACHE.copy()
 
-
 def save_cache(cache: dict):
     json.dump(cache, open(CACHE_FILE, "w", encoding="utf-8"),
               indent=2, ensure_ascii=False)
 
 # === list organization repos ===
-def org_repos_from_api(org: str) -> list[str]:
+def org_repos_from_api(org: str) -> list:
     repos = []
     page = 1
     while True:
@@ -134,13 +125,12 @@ def org_repos_from_api(org: str) -> list[str]:
         time.sleep(0.1)
     return repos
 
-
-def get_repos_list(cache: dict) -> dict[str, bool]:
+def get_repos_list(cache: dict) -> dict:
     if not pathlib.Path(REPOS_FILE).exists():
         log("error", f"{REPOS_FILE} not found"); sys.exit(1)
     cfg = json.load(open(REPOS_FILE, encoding="utf-8"))
 
-    def normalize(entry: str) -> str | None:
+    def normalize(entry: str) -> str or None:
         e = entry.strip()
         if e.startswith(("http://", "https://")):
             p = urlparse(e)
@@ -151,7 +141,7 @@ def get_repos_list(cache: dict) -> dict[str, bool]:
     official   = {normalize(x) for x in cfg.get("official", [])   if normalize(x)}
     unofficial = {normalize(x) for x in cfg.get("unofficial", []) if normalize(x)}
 
-    def expand(src: set[str]) -> set[str]:
+    def expand(src: set) -> set:
         out = set()
         now = time.time()
         for x in src:
@@ -233,7 +223,6 @@ def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
     st["c_page"]  = 1
     st["c_since"] = utc_now()
 
-
 def fetch_items(repo: str, is_off: bool, st: dict, seen: set):
     owner, name = repo.split("/")
     base = f"https://github.com/{owner}/{name}"
@@ -262,4 +251,92 @@ def fetch_items(repo: str, is_off: bool, st: dict, seen: set):
             author = it.get("user", {}).get("login")
             if not author:
                 continue
-            key = f"{repo}#{
+            key = f"{repo}#{it.get('number')}"
+            if key in seen:
+                continue
+            seen.add(key)
+            rec = {
+                "number":     it.get("number"),
+                "title":      it.get("title"),
+                "url":        it.get("html_url"),
+                "repo":       base,
+                "state":      it.get("state"),
+                "created_at": it.get("created_at"),
+                "is_official": is_off,
+                "type":       "pull_request" if "pull_request" in it else "issue"
+            }
+            yield author, rec
+
+        page += 1
+        time.sleep(0.1)
+
+    st["i_page"]  = 1
+    st["i_since"] = utc_now()
+
+# === main ===
+def main():
+    log("info", "Loading cache and existing leaderboard…")
+    cache = load_cache()
+
+    # Читаем прошлый leaderboard.json
+    if pathlib.Path(OUTPUT_FILE).exists():
+        try:
+            prev = json.load(open(OUTPUT_FILE, encoding="utf-8"))
+        except Exception:
+            prev = {"users": []}
+    else:
+        prev = {"users": []}
+
+    # Создаём map login→user из прошлого JSON
+    users_map = {u["login"]: u for u in prev.get("users", [])}
+
+    # defaultdict для мержа
+    def _new_user():
+        return {
+            "login": None,
+            "profile_url": None,
+            "commits": [],
+            "issues": [],
+            "pull_requests": []
+        }
+    users = defaultdict(_new_user, users_map)
+
+    log("info", "Building repository list…")
+    repos_map = get_repos_list(cache)
+    log("info", f"Total repos to process: {len(repos_map)}")
+
+    seen_shas   = set(cache.get("commits", []))
+    seen_issues = set(cache.get("issues", []))
+    repo_state  = cache.setdefault("repos", {})
+
+    for repo, is_off in repos_map.items():
+        log("info", f"--- Processing {repo} (official={is_off}) ---")
+        st = repo_state.setdefault(repo, {})
+
+        for author, cm in fetch_commits(repo, is_off, st, seen_shas):
+            u = users[author]
+            u["login"]       = author
+            u["profile_url"] = f"https://github.com/{author}"
+            u["commits"].append(cm)
+
+        for author, it in fetch_items(repo, is_off, st, seen_issues):
+            u = users[author]
+            u["login"]       = author
+            u["profile_url"] = f"https://github.com/{author}"
+            col = "pull_requests" if it["type"] == "pull_request" else "issues"
+            u[col].append(it)
+
+    # Обновляем кеш и сохраняем
+    cache["commits"] = list(seen_shas)
+    cache["issues"]  = list(seen_issues)
+    save_cache(cache)
+
+    # Пишем итоговый leaderboard.json
+    out = {"users": list(users.values())}
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2, ensure_ascii=False)
+
+    log("info", f"Done: users={len(out['users'])}, commits={len(seen_shas)}, issues+PR={len(seen_issues)}")
+
+if __name__ == "__main__":
+    main()
