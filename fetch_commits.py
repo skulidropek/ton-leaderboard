@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-fetch_commits.py — автономный сборщик статистики с PAT (5 000 req/ч) и накоплением истории:
+fetch_commits.py — автономный сборщик статистики с PAT (5 000 req/ч) и накоплением истории:
 
 • Читает ton_repos.json (организации или owner/repo)
 • Хранит единый кэш cache.json для incremental fetch (commits/issues)
 • При первом запуске делает полный дамп всех репо
-• Дальше инкрементально добавляет только новые коммиты, issue и PR
-• Сохраняет список изменённых файлов в каждом коммите
-• Логирует процесс по репозиториям/страницам
+• Далее инкрементально добавляет только новые коммиты, issue и PR
+• Возвращает только имена файлов (с расширениями), без их содержимого
+• Логирует прогресс по страницам и по репозиториям
 • Объединяет старый leaderboard.json с новыми записями и сохраняет его
 • Пишет итог в leaderboard.json
 
@@ -31,6 +31,7 @@ OUTPUT_FILE = "leaderboard.json"
 PER_PAGE    = 100
 ORG_TTL     = 7 * 24 * 3600  # 7 дней
 
+
 def safe_get(url, **kw):
     backoff = 1
     while True:
@@ -42,16 +43,13 @@ def safe_get(url, **kw):
                     msg = r.json().get("message", "").lower()
                 except Exception:
                     pass
-            # secondary rate limit
             if r.status_code == 403 and "secondary rate limit" in msg:
                 retry = int(r.headers.get("Retry-After", backoff))
                 log("warn", f"Secondary rate limit on {url}, sleeping {retry}s")
                 time.sleep(retry)
                 continue
-            # forbidden
             if r.status_code == 403:
                 raise RuntimeError(f"403 Forbidden {url} → {msg or 'token lacks permission'}")
-            # too many requests
             retry = int(r.headers.get("Retry-After", backoff))
             log("warn", f"429 from {url}, sleeping {retry}s")
             time.sleep(retry)
@@ -59,11 +57,14 @@ def safe_get(url, **kw):
             continue
         return r
 
+
 def log(level: str, msg: str):
     sys.stderr.write(f"[{level}] {msg}\n")
 
+
 def utc_now() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
 
 def gh_headers() -> dict:
     token = os.getenv("PAT_TOKEN") or os.getenv("GITHUB_TOKEN")
@@ -80,15 +81,15 @@ def gh_headers() -> dict:
 EMPTY_CACHE = {
     "commits": [],
     "issues": [],
-    "orgs": {},   # org → { "repos": [...], "ts": timestamp }
-    "repos": {}   # owner/repo → { "c_since","c_page","i_since","i_page" }
+    "orgs": {},    # org → { 'repos': [...], 'ts': timestamp }
+    "repos": {}    # owner/repo → { 'c_since','c_page','i_since','i_page' }
 }
 
 def load_cache() -> dict:
     p = pathlib.Path(CACHE_FILE)
     if p.exists():
         try:
-            data = json.load(open(p, encoding="utf-8"))
+            data = json.load(open(CACHE_FILE, encoding="utf-8"))
             if isinstance(data, dict):
                 return data
         except Exception as e:
@@ -100,6 +101,7 @@ def save_cache(cache: dict):
               indent=2, ensure_ascii=False)
 
 # === list organization repos ===
+
 def org_repos_from_api(org: str) -> list:
     repos = []
     page = 1
@@ -125,6 +127,7 @@ def org_repos_from_api(org: str) -> list:
         time.sleep(0.1)
     return repos
 
+
 def get_repos_list(cache: dict) -> dict:
     if not pathlib.Path(REPOS_FILE).exists():
         log("error", f"{REPOS_FILE} not found"); sys.exit(1)
@@ -145,8 +148,7 @@ def get_repos_list(cache: dict) -> dict:
         out = set()
         now = time.time()
         for x in src:
-            if not x:
-                continue
+            if not x: continue
             parts = x.split("/")
             if len(parts) == 1:
                 meta  = cache["orgs"].get(x, {})
@@ -167,7 +169,8 @@ def get_repos_list(cache: dict) -> dict:
     result.update({r: False for r in expand(unofficial)})
     return result
 
-# === fetch commits and issues ===
+# === fetch commits ===
+
 def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
     owner, name = repo.split("/")
     base = f"https://github.com/{owner}/{name}"
@@ -181,14 +184,10 @@ def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
             params["since"] = since
         resp = safe_get(
             f"https://api.github.com/repos/{repo}/commits",
-            headers=gh_headers(),
-            params=params,
-            timeout=30
+            headers=gh_headers(), params=params, timeout=30
         )
-        if not resp.ok:
-            log("warn", f"[{repo}] commits error: {resp.status_code}")
-            break
         data = resp.json()
+        log("info", f"[{repo}] page {page}: получено {len(data)} коммитов")
         if not data:
             break
 
@@ -200,18 +199,17 @@ def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
                 f"https://api.github.com/repos/{repo}/commits/{sha}",
                 headers=gh_headers(), timeout=30
             ).json()
-            files = [f["filename"] for f in det.get("files", []) if f.get("filename")]
+            file_names = [os.path.basename(f["filename"]) for f in det.get("files", []) if f.get("filename")]
 
             author = (c.get("author") and c["author"].get("login")) \
                      or c["commit"]["author"].get("name", "unknown")
-
             rec = {
-                "sha":         sha,
-                "author":      author,
-                "url":         f"{base}/commit/{sha}",
-                "repo":        base,
-                "date":        c["commit"]["author"].get("date"),
-                "files":       files,
+                "sha":        sha,
+                "author":     author,
+                "url":        f"{base}/commit/{sha}",
+                "repo":       base,
+                "date":       c["commit"]["author"].get("date"),
+                "file_names": file_names,
                 "is_official": is_off
             }
             seen.add(sha)
@@ -222,6 +220,8 @@ def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
 
     st["c_page"]  = 1
     st["c_since"] = utc_now()
+
+# === fetch issues & PR ===
 
 def fetch_items(repo: str, is_off: bool, st: dict, seen: set):
     owner, name = repo.split("/")
@@ -236,14 +236,10 @@ def fetch_items(repo: str, is_off: bool, st: dict, seen: set):
             params["since"] = since
         resp = safe_get(
             f"https://api.github.com/repos/{repo}/issues",
-            headers=gh_headers(),
-            params=params,
-            timeout=30
+            headers=gh_headers(), params=params, timeout=30
         )
-        if not resp.ok:
-            log("warn", f"[{repo}] issues error: {resp.status_code}")
-            break
         data = resp.json()
+        log("info", f"[{repo}] page {page}: получено {len(data)} issues/PR")
         if not data:
             break
 
@@ -262,7 +258,7 @@ def fetch_items(repo: str, is_off: bool, st: dict, seen: set):
                 "repo":       base,
                 "state":      it.get("state"),
                 "created_at": it.get("created_at"),
-                "is_official": is_off,
+                "is_official":is_off,
                 "type":       "pull_request" if "pull_request" in it else "issue"
             }
             yield author, rec
@@ -287,18 +283,9 @@ def main():
     else:
         prev = {"users": []}
 
-    # Создаём map login→user из прошлого JSON
+    # Map login → user из прошлого JSON
     users_map = {u["login"]: u for u in prev.get("users", [])}
-
-    # defaultdict для мержа
-    def _new_user():
-        return {
-            "login": None,
-            "profile_url": None,
-            "commits": [],
-            "issues": [],
-            "pull_requests": []
-        }
+    def _new_user(): return {"login": None, "profile_url": None, "commits": [], "issues": [], "pull_requests": []}
     users = defaultdict(_new_user, users_map)
 
     log("info", "Building repository list…")
@@ -326,7 +313,9 @@ def main():
             col = "pull_requests" if it["type"] == "pull_request" else "issues"
             u[col].append(it)
 
-    # Обновляем кеш и сохраняем
+        log("info", f"[{repo}] done: commits fetched={len(seen_shas)} issues fetched={len(seen_issues)}")
+
+    # Сохраняем кеш
     cache["commits"] = list(seen_shas)
     cache["issues"]  = list(seen_issues)
     save_cache(cache)
@@ -336,7 +325,7 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
 
-    log("info", f"Done: users={len(out['users'])}, commits={len(seen_shas)}, issues+PR={len(seen_issues)}")
+    log("info", f"Done: total users={len(out['users'])}, commits={len(seen_shas)}, issues+PR={len(seen_issues})}")
 
 if __name__ == "__main__":
     main()
