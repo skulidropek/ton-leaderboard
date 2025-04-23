@@ -30,6 +30,19 @@ OUTPUT_FILE = "leaderboard.json"
 PER_PAGE    = 100
 ORG_TTL     = 7 * 24 * 3600  # 7 дней
 
+def safe_get(url, **kw):
+    backoff = 1
+    while True:
+        r = requests.get(url, **kw)
+        if r.status_code == 429:
+            retry = r.headers.get("Retry-After")
+            wait = int(retry) if retry else backoff
+            log("warn", f"429 from {url}, sleeping {wait}s")
+            time.sleep(wait)
+            backoff = min(backoff * 2, 60)
+            continue
+        return r
+
 def log(level: str, msg: str):
     sys.stderr.write(f"[{level}] {msg}\n")
 
@@ -76,7 +89,7 @@ def org_repos_from_api(org: str) -> list[str]:
     page = 1
     while True:
         log("info", f"[ORG] listing {org}, page {page}")
-        resp = requests.get(
+        resp = safe_get(
             f"https://api.github.com/orgs/{org}/repos",
             headers=gh_headers(),
             params={"per_page": PER_PAGE, "page": page},
@@ -148,7 +161,7 @@ def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
         params = {"per_page": PER_PAGE, "page": page}
         if since:
             params["since"] = since
-        resp = requests.get(
+        resp = safe_get(
             f"https://api.github.com/repos/{repo}/commits",
             headers=gh_headers(),
             params=params,
@@ -165,7 +178,7 @@ def fetch_commits(repo: str, is_off: bool, st: dict, seen: set):
             sha = c.get("sha")
             if not sha or sha in seen:
                 continue
-            det = requests.get(
+            det = safe_get(
                 f"https://api.github.com/repos/{repo}/commits/{sha}",
                 headers=gh_headers(), timeout=30
             ).json()
@@ -203,7 +216,7 @@ def fetch_items(repo: str, is_off: bool, st: dict, seen: set):
         params = {"state": "all", "per_page": PER_PAGE, "page": page}
         if since:
             params["since"] = since
-        resp = requests.get(
+        resp = safe_get(
             f"https://api.github.com/repos/{repo}/issues",
             headers=gh_headers(),
             params=params,
