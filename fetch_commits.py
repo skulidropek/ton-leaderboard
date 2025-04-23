@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-fetch_commits.py — автономный сборщик статистики с PAT (5 000 req/ч) и накоплением истории:
+fetch_commits.py — автономный сборщик статистики с PAT (5 000 req/ч) и накоплением истории:
 
 • Читает ton_repos.json (организации или owner/repo)
 • Хранит единый кэш cache.json для incremental fetch (commits/issues)
@@ -270,6 +270,7 @@ def fetch_items(repo: str, is_off: bool, st: dict, seen: set):
     st["i_since"] = utc_now()
 
 # === main ===
+
 def main():
     log("info", "Loading cache and existing leaderboard…")
     cache = load_cache()
@@ -325,7 +326,7 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
 
-    log("info", f"Done: total users={len(out['users'])}, commits={len(seen_shas)}, issues+PR={len(seen_issues})}")
+    log("info", f"Done: total users={len(out['users'])}, commits={len(seen_shas)}, issues+PR={len(seen_issues)}")
 
 if __name__ == "__main__":
     main()
