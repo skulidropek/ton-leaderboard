@@ -27,7 +27,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
-          fetch-depth: 0
+          fetch-depth: 0        # получаем полный history для ребейза
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -51,12 +51,17 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Добавляем оба файла: витрину и единый кеш
+
           git add leaderboard.json cache.json
 
           if git diff --cached --quiet; then
             echo "✔ No changes to commit"
           else
             git commit -m "Update leaderboard.json and cache.json"
+
+            # Подтягиваем возможные upstream-изменения и ребейзим
+            git fetch origin main
+            git rebase origin/main
+
             git push
           fi
